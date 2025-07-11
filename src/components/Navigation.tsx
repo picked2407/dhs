@@ -68,7 +68,7 @@ const Navigation = () => {
               Price
             </a>
             <Button variant="default" size="sm" className="h-8 px-4 bg-primary hover:bg-primary/90" asChild>
-              <a href="/contact">Apply</a>
+              <a href="/apply">Apply</a>
             </Button>
           </div>
 
