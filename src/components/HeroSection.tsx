@@ -124,7 +124,7 @@ const HeroSection = () => {
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${heroImage})` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-l from-background/10 via-background/15 to-background/70" />
+          <div className="absolute inset-0 bg-gradient-to-l from-background/20 via-background/40 to-background" />
           
           {/* Floating elements over the image */}
         </div>
@@ -210,7 +210,7 @@ const HeroSection = () => {
           className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-background/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-background/20 to-transparent" />
       </motion.div>
       
     </motion.section>
