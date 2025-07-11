@@ -85,6 +85,7 @@ export default {
 			},
 			fontFamily: {
 				'display': ['Outfit', 'sans-serif'],
+				'heading': ['Outfit', 'sans-serif'],
 				'body': ['Inter', 'sans-serif']
 			},
 			keyframes: {

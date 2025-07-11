@@ -114,14 +114,14 @@ export function ApplyForm() {
       <div className="mb-8">
         <div className="flex items-center mb-6">
           <div className="w-3 h-3 bg-primary rounded-full mr-2"></div>
-          <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+          <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider font-heading">
             Step {currentSection} of 3
           </span>
         </div>
-        <h2 className="text-2xl font-bold text-foreground mb-2">
+        <h2 className="text-3xl font-bold text-foreground mb-2 font-heading">
           {sections[currentSection - 1].title}
         </h2>
-        <p className="text-muted-foreground">
+        <p className="text-muted-foreground font-body">
           {sections[currentSection - 1].description}
         </p>
       </div>
@@ -132,11 +132,11 @@ export function ApplyForm() {
           {sections.map((_, index) => (
             <div
               key={index}
-              className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-colors ${
+              className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold font-heading transition-all duration-300 ${
                 currentSection > index + 1
-                  ? "bg-primary text-primary-foreground"
+                  ? "bg-primary text-primary-foreground shadow-lg"
                   : currentSection === index + 1
-                  ? "bg-primary text-primary-foreground"
+                  ? "bg-primary text-primary-foreground shadow-lg scale-110"
                   : "bg-muted text-muted-foreground"
               }`}
             >
@@ -146,7 +146,7 @@ export function ApplyForm() {
         </div>
         <div className="h-2 bg-muted rounded-full overflow-hidden">
           <div 
-            className="h-full bg-primary transition-all duration-300 ease-out rounded-full"
+            className="h-full bg-gradient-to-r from-primary to-primary/80 transition-all duration-500 ease-out rounded-full"
             style={{ width: `${(currentSection / 3) * 100}%` }}
           />
         </div>
@@ -165,7 +165,7 @@ export function ApplyForm() {
               variant="outline"
               onClick={prevSection}
               disabled={currentSection === 1}
-              className="px-8"
+              className="px-8 font-heading font-medium"
             >
               Back
             </Button>
@@ -174,14 +174,14 @@ export function ApplyForm() {
               <Button 
                 type="button" 
                 onClick={nextSection}
-                className="px-8 bg-primary hover:bg-primary/90"
+                className="px-8 bg-primary hover:bg-primary/90 font-heading font-medium"
               >
                 Next
               </Button>
             ) : (
               <Button 
                 type="submit"
-                className="px-8 bg-primary hover:bg-primary/90"
+                className="px-8 bg-primary hover:bg-primary/90 font-heading font-medium"
               >
                 Submit Application
               </Button>

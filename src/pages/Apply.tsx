@@ -1,45 +1,69 @@
+import { useState, useEffect } from "react";
 import { ApplyForm } from "@/components/ApplyForm";
 import luxuryYacht from "@/assets/luxury-yacht-branded.jpg";
+import beachLifestyle from "@/assets/beach-lifestyle-branded.jpg";
+import luxuryCar from "@/assets/luxury-car-branded.jpg";
 
 const Apply = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  const images = [
+    luxuryYacht,
+    beachLifestyle,
+    luxuryCar
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        (prevIndex + 1) % images.length
+      );
+    }, 4000); // Change image every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <div className="min-h-screen flex">
-      {/* Left Side - Hero Image & Content */}
+      {/* Left Side - Sliding Image Gallery */}
       <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${luxuryYacht})` }}
-        />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 flex flex-col justify-center px-12 text-white">
-          <h1 className="text-5xl font-bold mb-6 leading-tight">
-            Ready to Transform
-            <br />
-            Your Success?
-          </h1>
-          <p className="text-xl leading-relaxed opacity-90 max-w-md">
-            Join the elite circle of content creators who've revolutionized their OnlyFans journey. 
-            Let's unlock your true earning potential together.
-          </p>
-          <div className="mt-8 space-y-4">
-            <div className="flex items-center">
-              <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-              <span className="text-lg">Personalized Growth Strategy</span>
-            </div>
-            <div className="flex items-center">
-              <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-              <span className="text-lg">24/7 Dedicated Support</span>
-            </div>
-            <div className="flex items-center">
-              <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-              <span className="text-lg">Proven Results & Success</span>
-            </div>
+        {images.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-transform duration-1000 ease-in-out ${
+              index === currentImageIndex 
+                ? 'translate-x-0' 
+                : index < currentImageIndex 
+                ? '-translate-x-full' 
+                : 'translate-x-full'
+            }`}
+          >
+            <div 
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: `url(${image})` }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
           </div>
+        ))}
+        
+        {/* Image Navigation Dots */}
+        <div className="absolute bottom-8 left-8 flex space-x-3 z-10">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentImageIndex 
+                  ? 'bg-white scale-125' 
+                  : 'bg-white/50 hover:bg-white/75'
+              }`}
+            />
+          ))}
         </div>
       </div>
 
       {/* Right Side - Application Form */}
-      <div className="w-full lg:w-1/2 bg-background flex items-center justify-center p-8 lg:p-12">
+      <div className="w-full lg:w-1/2 bg-background flex items-center justify-center p-6 lg:p-12">
         <div className="w-full max-w-lg">
           <ApplyForm />
         </div>
