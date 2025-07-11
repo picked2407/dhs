@@ -83,7 +83,7 @@ export function ContentSection({ control }: ContentSectionProps) {
                         field.onChange(field.value?.filter((value: string) => value !== type.id));
                       }
                     }}
-                    className="peer sr-only"
+                    className="peer absolute opacity-0 w-full h-full cursor-pointer"
                   />
                   <Label 
                     htmlFor={type.id} 
@@ -129,7 +129,7 @@ export function ContentSection({ control }: ContentSectionProps) {
                         field.onChange(field.value?.filter((value: string) => value !== option.id));
                       }
                     }}
-                    className="peer sr-only"
+                    className="peer absolute opacity-0 w-full h-full cursor-pointer"
                   />
                   <Label 
                     htmlFor={option.id} 

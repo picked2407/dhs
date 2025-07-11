@@ -38,7 +38,7 @@ export function OnlyFansSection({ control }: OnlyFansSectionProps) {
                 className="grid grid-cols-2 gap-4"
               >
                 <div className="relative">
-                  <RadioGroupItem value="yes" id="onlyfans-yes" className="peer sr-only" />
+                  <RadioGroupItem value="yes" id="onlyfans-yes" className="peer absolute opacity-0 w-full h-full cursor-pointer" />
                   <Label 
                     htmlFor="onlyfans-yes" 
                     className="flex items-center justify-center p-4 border-2 border-border rounded-xl cursor-pointer transition-all duration-200 peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white hover:border-primary/50 hover:bg-primary/5"
@@ -47,7 +47,7 @@ export function OnlyFansSection({ control }: OnlyFansSectionProps) {
                   </Label>
                 </div>
                 <div className="relative">
-                  <RadioGroupItem value="no" id="onlyfans-no" className="peer sr-only" />
+                  <RadioGroupItem value="no" id="onlyfans-no" className="peer absolute opacity-0 w-full h-full cursor-pointer" />
                   <Label 
                     htmlFor="onlyfans-no" 
                     className="flex items-center justify-center p-4 border-2 border-border rounded-xl cursor-pointer transition-all duration-200 peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white hover:border-primary/50 hover:bg-primary/5"
@@ -105,7 +105,7 @@ export function OnlyFansSection({ control }: OnlyFansSectionProps) {
                 className="grid grid-cols-2 gap-4"
               >
                 <div className="relative">
-                  <RadioGroupItem value="yes" id="agency-yes" className="peer sr-only" />
+                  <RadioGroupItem value="yes" id="agency-yes" className="peer absolute opacity-0 w-full h-full cursor-pointer" />
                   <Label 
                     htmlFor="agency-yes" 
                     className="flex items-center justify-center p-4 border-2 border-border rounded-xl cursor-pointer transition-all duration-200 peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white hover:border-primary/50 hover:bg-primary/5"
@@ -114,7 +114,7 @@ export function OnlyFansSection({ control }: OnlyFansSectionProps) {
                   </Label>
                 </div>
                 <div className="relative">
-                  <RadioGroupItem value="no" id="agency-no" className="peer sr-only" />
+                  <RadioGroupItem value="no" id="agency-no" className="peer absolute opacity-0 w-full h-full cursor-pointer" />
                   <Label 
                     htmlFor="agency-no" 
                     className="flex items-center justify-center p-4 border-2 border-border rounded-xl cursor-pointer transition-all duration-200 peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white hover:border-primary/50 hover:bg-primary/5"
