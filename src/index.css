@@ -2,29 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Phone Input Styling */
-.phone-input-container .PhoneInput {
-  @apply flex h-12 w-full rounded-xl border-2 border-input bg-background px-4 py-3 text-base ring-offset-background transition-colors hover:border-primary/50 focus-within:border-primary;
+/* Enhanced Phone Input Styling */
+.phone-input-enhanced .PhoneInput {
+  @apply flex h-12 w-full rounded-xl border-2 border-border bg-background px-4 py-3 text-base ring-offset-background transition-colors hover:border-primary/50 focus-within:border-primary;
 }
 
-.phone-input-container .PhoneInput--focus {
-  @apply ring-2 ring-ring ring-offset-2 outline-none;
+.phone-input-enhanced .PhoneInput--focus {
+  @apply outline-none border-primary ring-2 ring-ring ring-offset-2;
 }
 
-.phone-input-container .PhoneInputInput {
-  @apply bg-transparent border-0 outline-none flex-1 text-base placeholder:text-muted-foreground;
+.phone-input-enhanced .PhoneInputInput {
+  @apply bg-transparent border-0 outline-none flex-1 text-base placeholder:text-muted-foreground font-body;
+  padding: 0;
+  margin: 0;
 }
 
-.phone-input-container .PhoneInputCountrySelect {
-  @apply bg-transparent border-0 outline-none text-base mr-2;
+.phone-input-enhanced .PhoneInputCountrySelect {
+  @apply bg-transparent border-0 outline-none text-base mr-3 cursor-pointer hover:bg-primary/5 rounded-lg px-2 py-1 transition-colors;
 }
 
-.phone-input-container .PhoneInputCountrySelectArrow {
-  @apply text-muted-foreground;
+.phone-input-enhanced .PhoneInputCountrySelectArrow {
+  @apply text-muted-foreground ml-1;
 }
 
-.phone-input-container .PhoneInputCountryIcon {
-  @apply w-6 h-6;
+.phone-input-enhanced .PhoneInputCountryIcon {
+  @apply w-6 h-6 mr-2;
+}
+
+.phone-input-enhanced .PhoneInputCountryIcon--square {
+  @apply rounded-sm;
+}
+
+/* Country dropdown styling */
+.phone-input-enhanced .PhoneInputCountrySelect:focus {
+  @apply outline-none ring-2 ring-primary ring-offset-2;
+}
+
+/* Enhanced country selector */
+.phone-input-enhanced .PhoneInputCountry {
+  @apply flex items-center;
 }
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 

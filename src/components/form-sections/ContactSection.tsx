@@ -9,6 +9,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import PhoneInput from "react-phone-number-input/react-hook-form-input";
+import "react-phone-number-input/style.css";
 
 interface ContactSectionProps {
   control: Control<any>;
@@ -67,13 +68,15 @@ export function ContactSection({ control }: ContactSectionProps) {
               What is your Phone Number?
             </FormLabel>
             <FormControl>
-              <div className="phone-input-container">
+              <div className="phone-input-enhanced">
                 <PhoneInput
                   control={control}
                   name="phoneNumber"
-                  placeholder="Enter phone number"
+                  placeholder="Enter your phone number"
                   defaultCountry="US"
-                  className="phone-input-enhanced"
+                  international
+                  countryCallingCodeEditable={false}
+                  className="phone-input-field"
                 />
               </div>
             </FormControl>
