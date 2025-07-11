@@ -124,7 +124,7 @@ const HeroSection = () => {
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${heroImage})` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-l from-background/20 via-background/40 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent via-70% to-background" />
           
           {/* Floating elements over the image */}
         </div>
