@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import heroImage from "@/assets/hero-luxury.jpg";
+import heroImage from "/lovable-uploads/a8cc42a1-7313-42ba-a835-b19d2dad70ee.png";
 
 const HeroSection = () => {
   const containerVariants = {
