@@ -16,15 +16,21 @@ interface ContactSectionProps {
 
 export function ContactSection({ control }: ContactSectionProps) {
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       <FormField
         control={control}
         name="fullName"
         render={({ field }) => (
-          <FormItem>
-            <FormLabel>What is your Full Name?</FormLabel>
+          <FormItem className="space-y-4">
+            <FormLabel className="text-base font-semibold font-heading text-foreground">
+              What is your Full Name?
+            </FormLabel>
             <FormControl>
-              <Input placeholder="Enter your full name" {...field} />
+              <Input 
+                placeholder="Enter your full name" 
+                className="h-12 text-base border-2 rounded-xl hover:border-primary/50 focus:border-primary transition-colors"
+                {...field} 
+              />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -35,12 +41,15 @@ export function ContactSection({ control }: ContactSectionProps) {
         control={control}
         name="email"
         render={({ field }) => (
-          <FormItem>
-            <FormLabel>What is your Email Address?</FormLabel>
+          <FormItem className="space-y-4">
+            <FormLabel className="text-base font-semibold font-heading text-foreground">
+              What is your Email Address?
+            </FormLabel>
             <FormControl>
               <Input 
                 type="email" 
                 placeholder="Enter your email address" 
+                className="h-12 text-base border-2 rounded-xl hover:border-primary/50 focus:border-primary transition-colors"
                 {...field} 
               />
             </FormControl>
@@ -53,8 +62,10 @@ export function ContactSection({ control }: ContactSectionProps) {
         control={control}
         name="phoneNumber"
         render={({ field }) => (
-          <FormItem>
-            <FormLabel>What is your Phone Number?</FormLabel>
+          <FormItem className="space-y-4">
+            <FormLabel className="text-base font-semibold font-heading text-foreground">
+              What is your Phone Number?
+            </FormLabel>
             <FormControl>
               <div className="phone-input-container">
                 <PhoneInput
@@ -62,7 +73,7 @@ export function ContactSection({ control }: ContactSectionProps) {
                   name="phoneNumber"
                   placeholder="Enter phone number"
                   defaultCountry="US"
-                  className="phone-input"
+                  className="phone-input-enhanced"
                 />
               </div>
             </FormControl>
@@ -75,12 +86,14 @@ export function ContactSection({ control }: ContactSectionProps) {
         control={control}
         name="additionalNotes"
         render={({ field }) => (
-          <FormItem>
-            <FormLabel>Any other notes you'd like to share? (Optional)</FormLabel>
+          <FormItem className="space-y-4">
+            <FormLabel className="text-base font-semibold font-heading text-foreground">
+              Any other notes you'd like to share? <span className="text-muted-foreground font-normal">(Optional)</span>
+            </FormLabel>
             <FormControl>
               <Textarea 
                 placeholder="Tell us anything else you think we should know..."
-                className="min-h-[100px]"
+                className="min-h-[120px] text-base border-2 rounded-xl hover:border-primary/50 focus:border-primary transition-colors resize-none"
                 {...field} 
               />
             </FormControl>

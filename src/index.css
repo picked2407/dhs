@@ -4,7 +4,7 @@
 
 /* Phone Input Styling */
 .phone-input-container .PhoneInput {
-  @apply flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background;
+  @apply flex h-12 w-full rounded-xl border-2 border-input bg-background px-4 py-3 text-base ring-offset-background transition-colors hover:border-primary/50 focus-within:border-primary;
 }
 
 .phone-input-container .PhoneInput--focus {
@@ -12,11 +12,11 @@
 }
 
 .phone-input-container .PhoneInputInput {
-  @apply bg-transparent border-0 outline-none flex-1 text-sm placeholder:text-muted-foreground;
+  @apply bg-transparent border-0 outline-none flex-1 text-base placeholder:text-muted-foreground;
 }
 
 .phone-input-container .PhoneInputCountrySelect {
-  @apply bg-transparent border-0 outline-none text-sm;
+  @apply bg-transparent border-0 outline-none text-base mr-2;
 }
 
 .phone-input-container .PhoneInputCountrySelectArrow {
@@ -24,7 +24,7 @@
 }
 
 .phone-input-container .PhoneInputCountryIcon {
-  @apply w-5 h-5;
+  @apply w-6 h-6;
 }
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 

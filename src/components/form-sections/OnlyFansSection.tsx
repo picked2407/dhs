@@ -22,26 +22,38 @@ interface OnlyFansSectionProps {
 
 export function OnlyFansSection({ control }: OnlyFansSectionProps) {
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       <FormField
         control={control}
         name="hasOnlyFans"
         render={({ field }) => (
-          <FormItem>
-            <FormLabel>Do you currently have an OnlyFans account?</FormLabel>
+          <FormItem className="space-y-4">
+            <FormLabel className="text-base font-semibold font-heading text-foreground">
+              Do you currently have an OnlyFans account?
+            </FormLabel>
             <FormControl>
               <RadioGroup
                 onValueChange={field.onChange}
                 value={field.value}
-                className="flex flex-col space-y-2"
+                className="grid grid-cols-2 gap-4"
               >
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="yes" id="onlyfans-yes" />
-                  <Label htmlFor="onlyfans-yes">Yes</Label>
+                <div className="relative">
+                  <RadioGroupItem value="yes" id="onlyfans-yes" className="peer sr-only" />
+                  <Label 
+                    htmlFor="onlyfans-yes" 
+                    className="flex items-center justify-center p-4 border-2 rounded-xl cursor-pointer transition-all duration-200 peer-checked:border-primary peer-checked:bg-primary/5 hover:border-primary/50 hover:bg-primary/5"
+                  >
+                    <span className="font-medium">Yes</span>
+                  </Label>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="no" id="onlyfans-no" />
-                  <Label htmlFor="onlyfans-no">No</Label>
+                <div className="relative">
+                  <RadioGroupItem value="no" id="onlyfans-no" className="peer sr-only" />
+                  <Label 
+                    htmlFor="onlyfans-no" 
+                    className="flex items-center justify-center p-4 border-2 rounded-xl cursor-pointer transition-all duration-200 peer-checked:border-primary peer-checked:bg-primary/5 hover:border-primary/50 hover:bg-primary/5"
+                  >
+                    <span className="font-medium">No</span>
+                  </Label>
                 </div>
               </RadioGroup>
             </FormControl>
@@ -54,21 +66,23 @@ export function OnlyFansSection({ control }: OnlyFansSectionProps) {
         control={control}
         name="onlyFansDuration"
         render={({ field }) => (
-          <FormItem>
-            <FormLabel>How long have you been on OnlyFans?</FormLabel>
+          <FormItem className="space-y-4">
+            <FormLabel className="text-base font-semibold font-heading text-foreground">
+              How long have you been on OnlyFans?
+            </FormLabel>
             <Select onValueChange={field.onChange} value={field.value}>
               <FormControl>
-                <SelectTrigger>
+                <SelectTrigger className="h-12 text-base border-2 rounded-xl hover:border-primary/50 focus:border-primary transition-colors">
                   <SelectValue placeholder="Select duration" />
                 </SelectTrigger>
               </FormControl>
-              <SelectContent>
-                <SelectItem value="new">I'm new / Haven't started yet</SelectItem>
-                <SelectItem value="1-3months">1-3 months</SelectItem>
-                <SelectItem value="3-6months">3-6 months</SelectItem>
-                <SelectItem value="6-12months">6-12 months</SelectItem>
-                <SelectItem value="1-2years">1-2 years</SelectItem>
-                <SelectItem value="2+years">2+ years</SelectItem>
+              <SelectContent className="rounded-xl border-2">
+                <SelectItem value="new" className="text-base py-3">I'm new / Haven't started yet</SelectItem>
+                <SelectItem value="1-3months" className="text-base py-3">1-3 months</SelectItem>
+                <SelectItem value="3-6months" className="text-base py-3">3-6 months</SelectItem>
+                <SelectItem value="6-12months" className="text-base py-3">6-12 months</SelectItem>
+                <SelectItem value="1-2years" className="text-base py-3">1-2 years</SelectItem>
+                <SelectItem value="2+years" className="text-base py-3">2+ years</SelectItem>
               </SelectContent>
             </Select>
             <FormMessage />
@@ -80,21 +94,33 @@ export function OnlyFansSection({ control }: OnlyFansSectionProps) {
         control={control}
         name="hasAgency"
         render={({ field }) => (
-          <FormItem>
-            <FormLabel>Are you currently working with an agency?</FormLabel>
+          <FormItem className="space-y-4">
+            <FormLabel className="text-base font-semibold font-heading text-foreground">
+              Are you currently working with an agency?
+            </FormLabel>
             <FormControl>
               <RadioGroup
                 onValueChange={field.onChange}
                 value={field.value}
-                className="flex flex-col space-y-2"
+                className="grid grid-cols-2 gap-4"
               >
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="yes" id="agency-yes" />
-                  <Label htmlFor="agency-yes">Yes</Label>
+                <div className="relative">
+                  <RadioGroupItem value="yes" id="agency-yes" className="peer sr-only" />
+                  <Label 
+                    htmlFor="agency-yes" 
+                    className="flex items-center justify-center p-4 border-2 rounded-xl cursor-pointer transition-all duration-200 peer-checked:border-primary peer-checked:bg-primary/5 hover:border-primary/50 hover:bg-primary/5"
+                  >
+                    <span className="font-medium">Yes</span>
+                  </Label>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="no" id="agency-no" />
-                  <Label htmlFor="agency-no">No</Label>
+                <div className="relative">
+                  <RadioGroupItem value="no" id="agency-no" className="peer sr-only" />
+                  <Label 
+                    htmlFor="agency-no" 
+                    className="flex items-center justify-center p-4 border-2 rounded-xl cursor-pointer transition-all duration-200 peer-checked:border-primary peer-checked:bg-primary/5 hover:border-primary/50 hover:bg-primary/5"
+                  >
+                    <span className="font-medium">No</span>
+                  </Label>
                 </div>
               </RadioGroup>
             </FormControl>
@@ -107,22 +133,24 @@ export function OnlyFansSection({ control }: OnlyFansSectionProps) {
         control={control}
         name="monthlyEarning"
         render={({ field }) => (
-          <FormItem>
-            <FormLabel>How much are you currently earning per month on OnlyFans?</FormLabel>
+          <FormItem className="space-y-4">
+            <FormLabel className="text-base font-semibold font-heading text-foreground">
+              How much are you currently earning per month on OnlyFans?
+            </FormLabel>
             <Select onValueChange={field.onChange} value={field.value}>
               <FormControl>
-                <SelectTrigger>
+                <SelectTrigger className="h-12 text-base border-2 rounded-xl hover:border-primary/50 focus:border-primary transition-colors">
                   <SelectValue placeholder="Select earning range" />
                 </SelectTrigger>
               </FormControl>
-              <SelectContent>
-                <SelectItem value="0">$0 - I haven't started yet</SelectItem>
-                <SelectItem value="1-500">$1 - $500</SelectItem>
-                <SelectItem value="500-1000">$500 - $1,000</SelectItem>
-                <SelectItem value="1000-2500">$1,000 - $2,500</SelectItem>
-                <SelectItem value="2500-5000">$2,500 - $5,000</SelectItem>
-                <SelectItem value="5000-10000">$5,000 - $10,000</SelectItem>
-                <SelectItem value="10000+">$10,000+</SelectItem>
+              <SelectContent className="rounded-xl border-2">
+                <SelectItem value="0" className="text-base py-3">$0 - I haven't started yet</SelectItem>
+                <SelectItem value="1-500" className="text-base py-3">$1 - $500</SelectItem>
+                <SelectItem value="500-1000" className="text-base py-3">$500 - $1,000</SelectItem>
+                <SelectItem value="1000-2500" className="text-base py-3">$1,000 - $2,500</SelectItem>
+                <SelectItem value="2500-5000" className="text-base py-3">$2,500 - $5,000</SelectItem>
+                <SelectItem value="5000-10000" className="text-base py-3">$5,000 - $10,000</SelectItem>
+                <SelectItem value="10000+" className="text-base py-3">$10,000+</SelectItem>
               </SelectContent>
             </Select>
             <FormMessage />
