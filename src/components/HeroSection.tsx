@@ -185,7 +185,8 @@ const HeroSection = () => {
             variants={itemVariants}
             className="text-muted-foreground font-body text-lg lg:text-xl leading-relaxed mb-10 max-w-lg"
           >
-            Elite talent management for ambitious creators wanting more money, time and freedom. Join the exclusive 0.1% earning 7-figures.
+            Exclusive talent management for ambitious creators ready to scale their income, reclaim their time, and build a true lifestyle.
+            Join the top 1% earning 6–7 figures.
           </motion.p>
           
           {/* CTA Button */}
