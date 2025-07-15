@@ -143,7 +143,7 @@ const HeroSection = () => {
             className="inline-flex items-center bg-primary/10 border border-primary/20 rounded-luxury px-6 py-3 mb-8"
           >
             <span className="text-primary font-display font-bold uppercase tracking-wide text-sm">
-              Elite Talent Management
+              Exclusive Talent Management
             </span>
           </motion.div>
 
