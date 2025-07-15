@@ -193,7 +193,7 @@ const HeroSection = () => {
                 size="lg" 
                 className="text-base lg:text-lg px-8 lg:px-10 py-5 lg:py-6 h-auto font-display shadow-glow hover:shadow-luxury transition-all duration-300"
               >
-                Apply Now
+                Send Us A Message
                 <ArrowRight className="ml-2 h-4 w-4 lg:h-5 lg:w-5" />
               </Button>
             </motion.div>
