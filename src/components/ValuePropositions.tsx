@@ -4,18 +4,18 @@ const ValuePropositions = () => {
   const propositions = [
     {
       icon: DollarSign,
-      title: "More Money. Less Work.",
-      description: "Eliminate burnout and boost income working just 2 days a week."
+      title: "🔹 Work Less for More",
+      description: "Escape burnout and multiply your income while working just 2 days a week."
     },
     {
       icon: Rocket,
-      title: "Join the Top 0.1%.",
-      description: "Luxury, Travel, Freedom. Live your dream life on your terms."
+      title: "🔹 Remove the Guesswork",
+      description: "We've built proven systems so you can follow a clear path — no stress, no guesswork, just results."
     },
     {
       icon: Heart,
-      title: "Success Without Stress.",
-      description: "We manage everything for you, so failing is almost impossible."
+      title: "🔹 Join the Top 1%",
+      description: "Live life your way, while your team handles the rest."
     }
   ];
 
