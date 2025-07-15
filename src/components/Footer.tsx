@@ -64,7 +64,7 @@ const Footer = () => {
                 <img src="/lovable-uploads/f2be9f1e-1cc3-481b-bf8a-9971f10f9b54.png" alt="FansLink Logo" className="h-12 w-auto" />
               </div>
               <p className="text-background/80 font-body leading-relaxed">
-                Empowering elite content creators to reach their full potential through premium partnerships and luxury lifestyle experiences.
+                Empowering content creators to reach their full potential through premium partnerships and a structure no one else has.
               </p>
             </div>
 
