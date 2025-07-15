@@ -4,17 +4,17 @@ const ValuePropositions = () => {
   const propositions = [
     {
       icon: DollarSign,
-      title: "🔹 Work Less for More",
+      title: "Work Less for More",
       description: "Escape burnout and multiply your income while working just 2 days a week."
     },
     {
       icon: Rocket,
-      title: "🔹 Remove the Guesswork",
+      title: "Remove the Guesswork",
       description: "We've built proven systems so you can follow a clear path — no stress, no guesswork, just results."
     },
     {
       icon: Heart,
-      title: "🔹 Join the Top 1%",
+      title: "Join the Top 1%",
       description: "Live life your way, while your team handles the rest."
     }
   ];
