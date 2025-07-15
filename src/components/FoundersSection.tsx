@@ -144,11 +144,11 @@ const FoundersSection = () => {
             </motion.h2>
             
             <motion.p variants={itemVariants} className="text-muted-foreground font-body text-lg leading-relaxed">
-              With 16+ years scaling businesses beyond £50m and working with clients from Love Island, TOWIE, Geordie Shore and Ex on the Beach, our founders are bringing their knowledge and expertise to scaling creators to the top 0.1%.
+              With over 15 years of combined experience in marketing, social media, and scaling digital businesses and grown brands in finance and across the creator economy. Our expertise lies in building high-converting systems, crafting long-term strategies, and applying proven frameworks to help creators reach the top 1%. We are known for our hands-on approach and obsession with execution, we bring clarity, consistency, and serious momentum to every brand and creator we work with.
             </motion.p>
             
             <motion.p variants={itemVariants} className="text-muted-foreground font-body italic text-base">
-              Fin & Tom — FansLink Founders
+              21 contracted staff working around the clock to process content, research virality and ensure our creators are making the most of their account!
             </motion.p>
             
             <motion.div
@@ -161,7 +161,7 @@ const FoundersSection = () => {
                 size="lg" 
                 className="text-base px-12 py-4 h-auto font-display uppercase tracking-wide shadow-glow hover:shadow-luxury transition-all duration-300"
               >
-                Apply Now
+                Unlock your skillset and see results now
               </Button>
             </motion.div>
           </motion.div>
