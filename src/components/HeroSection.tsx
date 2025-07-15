@@ -156,7 +156,7 @@ const HeroSection = () => {
               variants={slideInLeft}
               className="text-foreground font-display font-black text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-none tracking-tight"
             >
-              MORE MONEY, TIME &
+              MORE MONEY, MORE STRUCTURE &
             </motion.h1>
             <motion.div
               variants={slideInLeft}
