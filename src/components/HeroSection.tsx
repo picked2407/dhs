@@ -156,14 +156,20 @@ const HeroSection = () => {
               variants={slideInLeft}
               className="text-foreground font-display font-black text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-none tracking-tight"
             >
-              MORE MONEY, MORE STRUCTURE &
+              MORE MONEY,
+            </motion.h1>
+            <motion.h1
+              variants={slideInLeft}
+              className="text-foreground font-display font-black text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-none tracking-tight"
+            >
+              MORE STRUCTURE,
             </motion.h1>
             <motion.div
               variants={slideInLeft}
               className="relative"
             >
               <h1 className="bg-gradient-hero bg-clip-text text-transparent font-display font-black text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-none tracking-tight">
-                FREEDOM
+                MORE FREEDOM
               </h1>
               <motion.div
                 initial={{ width: 0 }}
