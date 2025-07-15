@@ -111,9 +111,11 @@ const FoundersSection = () => {
               className="aspect-[4/3] bg-muted rounded-luxury overflow-hidden shadow-luxury"
             >
               {/* Placeholder for founders image */}
-              <div className="w-full h-full bg-gradient-to-br from-muted to-muted-foreground/20 flex items-center justify-center">
-                <span className="text-muted-foreground font-display text-xl">Founders Photo</span>
-              </div>
+              <img 
+                src="/lovable-uploads/ebc60173-3506-4265-b437-a5a094fefaa4.png" 
+                alt="Fin & Tom - FansLink Founders" 
+                className="w-full h-full object-cover"
+              />
             </motion.div>
             
             {/* Floating decorative elements */}
