@@ -81,7 +81,7 @@ const HowItWorksSection = () => {
           {/* Small heading */}
           <motion.div variants={itemVariants} className="mb-8">
             <span className="text-primary font-display font-bold text-lg uppercase tracking-wider">
-              How It Works
+              Our Process
             </span>
           </motion.div>
           
@@ -110,10 +110,10 @@ const HowItWorksSection = () => {
               <span className="text-6xl font-display font-black text-primary/20 group-hover:text-primary/40 transition-colors duration-300">01</span>
             </motion.div>
             <motion.h3 variants={itemVariants} className="text-2xl font-display font-black text-foreground mb-4 uppercase tracking-wider">
-              APPLY & JOIN
+              APPLY OR MESSAGE US NOW
             </motion.h3>
             <motion.p variants={itemVariants} className="text-muted-foreground font-body text-lg leading-relaxed">
-              We create your personal brand and build a custom growth plan around you.
+              Fill out our form or message us now to secure your space at FansLink
             </motion.p>
           </motion.div>
 
@@ -133,10 +133,10 @@ const HowItWorksSection = () => {
               <span className="text-6xl font-display font-black text-primary/20 group-hover:text-primary/40 transition-colors duration-300">02</span>
             </motion.div>
             <motion.h3 variants={itemVariants} className="text-2xl font-display font-black text-foreground mb-4 uppercase tracking-wider">
-              BUILD & LAUNCH
+              LAUNCH YOUR BESPOKE STRATEGY
             </motion.h3>
             <motion.p variants={itemVariants} className="text-muted-foreground font-body text-lg leading-relaxed">
-              From fan strategy to marketing, content drops, and platform growth, our 24/7 team gets to work so you can stay focused and stress-free.
+              We build your personal brand and custom growth plan — handling fans, marketing, content, and growth so you stay focused and stress-free.
             </motion.p>
           </motion.div>
 
@@ -156,10 +156,10 @@ const HowItWorksSection = () => {
               <span className="text-6xl font-display font-black text-primary/20 group-hover:text-primary/40 transition-colors duration-300">03</span>
             </motion.div>
             <motion.h3 variants={itemVariants} className="text-2xl font-display font-black text-foreground mb-4 uppercase tracking-wider">
-              SCALE & OPTIMISE
+              PERFORMANCE ANALYSIS AND GROWTH
             </motion.h3>
             <motion.p variants={itemVariants} className="text-muted-foreground font-body text-lg leading-relaxed">
-              We track performance, test strategies, and optimise every week, so your income grows consistently.
+              We track, test, and optimise weekly so your income grows consistently; no guessing, no stress. We know what works and make it easy for you to follow and scale.
             </motion.p>
           </motion.div>
         </motion.div>
