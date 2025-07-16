@@ -178,7 +178,7 @@ const ExclusiveBenefitsSection = () => {
         {/* Exclusive Benefits */}
         <motion.div variants={slideInUp} className="text-center mb-12">
           <h3 className="font-display font-black text-3xl sm:text-4xl text-white mb-8">
-            EXCLUSIVE BENEFITS
+            WHAT ELSE DO WE OFFER?
           </h3>
         </motion.div>
 
