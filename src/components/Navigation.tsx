@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +39,7 @@ const Navigation = () => {
             />
           </div>
 
-          {/* Navigation Menu */}
+          {/* Desktop Navigation Menu */}
           <div className="hidden md:flex items-center space-x-8 ml-8">
             <a href="#earn" className={`font-body font-medium uppercase tracking-wider text-sm transition-colors ${
               isScrolled 
@@ -70,6 +72,67 @@ const Navigation = () => {
             <Button variant="default" size="sm" className="h-8 px-4 bg-primary hover:bg-primary/90" asChild>
               <a href="/apply">Apply</a>
             </Button>
+          </div>
+
+          {/* Mobile Hamburger Menu */}
+          <div className="md:hidden">
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button 
+                  variant="ghost" 
+                  size="icon"
+                  className={`${
+                    isScrolled 
+                      ? "text-foreground hover:text-foreground" 
+                      : "text-black hover:text-black"
+                  }`}
+                >
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                <div className="flex flex-col space-y-6 mt-8">
+                  <a 
+                    href="#earn" 
+                    className="font-body font-medium uppercase tracking-wider text-lg text-foreground hover:text-primary transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Earn More
+                  </a>
+                  <a 
+                    href="#team" 
+                    className="font-body font-medium uppercase tracking-wider text-lg text-foreground hover:text-primary transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Our Team
+                  </a>
+                  <a 
+                    href="#services" 
+                    className="font-body font-medium uppercase tracking-wider text-lg text-foreground hover:text-primary transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Services
+                  </a>
+                  <a 
+                    href="#price" 
+                    className="font-body font-medium uppercase tracking-wider text-lg text-foreground hover:text-primary transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Price
+                  </a>
+                  <Button 
+                    variant="default" 
+                    size="lg" 
+                    className="bg-primary hover:bg-primary/90 w-full"
+                    asChild
+                  >
+                    <a href="/apply" onClick={() => setIsMobileMenuOpen(false)}>
+                      Apply Now
+                    </a>
+                  </Button>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
 
         </div>
