@@ -43,33 +43,33 @@ const FeaturesSection = () => {
   const features = [
     {
       icon: Calendar,
-      title: "Weekly Custom Content Plans",
-      description: "We map out exactly what to post to help you go viral and get paid fast."
+      title: "Viral Content, Ready For You Weekly",
+      description: "We tell you exactly what to post to grow fast and get paid"
     },
     {
       icon: MessageCircle,
-      title: "Expert Fan Management",
-      description: "Our experienced chatters talk to your fans 24/7 — so you earn while you sleep."
+      title: "24/7 UK Chat Team",
+      description: "Our expert UK native chat team engages your fans around the clock, so you earn while you sleep."
     },
     {
       icon: TrendingUp,
-      title: "Organic IG & TikTok Scaling",
-      description: "We help you go viral the natural way, with content fans love."
+      title: "Go Viral Organically",
+      description: "We grow your socials with content that fans crave, no bots, no gimmicks."
     },
     {
       icon: BarChart3,
-      title: "1:1 Growth Coaching & Strategy",
-      description: "Work directly with experts who've helped women hit 6 and 7 figures."
+      title: "Strategy Built for 6 & 7 Figures",
+      description: "Work directly with experts who've scaled top creators, and know exactly how to get you there."
     },
     {
       icon: Users,
-      title: "Dedicated, Expert Team",
-      description: "From edits to strategy — you get a full team dedicated to your success, 24/7."
+      title: "Your Own Growth Team",
+      description: "From content to strategy to chat systems our full team is behind you 24/7 to drive success."
     },
     {
       icon: Diamond,
-      title: "VIP Perks & Wealth Planning",
-      description: "From luxury perks to smart money — helping you grow and keep wealth."
+      title: "Access our Exclusive perks",
+      description: "learn from our experience and have access to our accounting and banking systems"
     }
   ];
 
