@@ -1,7 +1,61 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import footerLuxury from "@/assets/footer-luxury.jpg";
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleEmailSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email.trim()) {
+      toast({
+        title: "Error",
+        description: "Please enter your email address",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    try {
+      const { error } = await supabase
+        .from('email_subscriptions')
+        .insert([{ email: email.trim() }]);
+
+      if (error) {
+        if (error.code === '23505') { // unique constraint violation
+          toast({
+            title: "Already Subscribed",
+            description: "This email is already subscribed to our newsletter!",
+          });
+        } else {
+          throw error;
+        }
+      } else {
+        toast({
+          title: "Success!",
+          description: "Thank you for subscribing to our newsletter!",
+        });
+        setEmail("");
+      }
+    } catch (error) {
+      console.error("Error subscribing:", error);
+      toast({
+        title: "Error",
+        description: "Failed to subscribe. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return <footer className="relative">
       {/* Main Footer with Background */}
       <section className="relative py-32 overflow-hidden">
@@ -45,12 +99,24 @@ const Footer = () => {
             <h3 className="font-display font-bold text-xl text-white mb-4">
               Stay Updated
             </h3>
-            <div className="flex flex-col sm:flex-row gap-2">
-              <Input type="email" placeholder="Enter your email" className="bg-white/10 border-white/30 text-white placeholder:text-white/60 backdrop-blur-sm flex-1" />
-              <Button variant="apply" className="px-4 sm:px-6 w-full sm:w-auto">
-                Join
+            <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-2">
+              <Input 
+                type="email" 
+                placeholder="Enter your email" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="bg-white/10 border-white/30 text-white placeholder:text-white/60 backdrop-blur-sm flex-1"
+                disabled={isSubmitting}
+              />
+              <Button 
+                type="submit" 
+                variant="apply" 
+                className="px-4 sm:px-6 w-full sm:w-auto"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Joining..." : "Join"}
               </Button>
-            </div>
+            </form>
           </div>
         </div>
       </section>

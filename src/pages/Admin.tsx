@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { 
   LogOut, 
@@ -45,13 +46,22 @@ type Application = {
   created_at: string;
 };
 
+type EmailSubscription = {
+  id: string;
+  email: string;
+  subscribed_at: string;
+  created_at: string;
+};
+
 const Admin = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loginData, setLoginData] = useState({ email: "", password: "" });
   const [loginError, setLoginError] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [applications, setApplications] = useState<Application[]>([]);
+  const [emailSubscriptions, setEmailSubscriptions] = useState<EmailSubscription[]>([]);
   const [loading, setLoading] = useState(true);
+  const [emailLoading, setEmailLoading] = useState(true);
   const { toast } = useToast();
 
   // Check if already logged in
@@ -87,9 +97,35 @@ const Admin = () => {
     }
   };
 
+  const fetchEmailSubscriptions = async () => {
+    try {
+      setEmailLoading(true);
+      const { data, error } = await supabase
+        .from('email_subscriptions')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (error) {
+        throw error;
+      }
+
+      setEmailSubscriptions(data || []);
+    } catch (error) {
+      console.error('Error fetching email subscriptions:', error);
+      toast({
+        title: "Error",
+        description: "Failed to fetch email subscriptions. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setEmailLoading(false);
+    }
+  };
+
   useEffect(() => {
     if (isAuthenticated) {
       fetchApplications();
+      fetchEmailSubscriptions();
     }
   }, [isAuthenticated]);
 
@@ -271,11 +307,11 @@ const Admin = () => {
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-body text-muted-foreground uppercase tracking-wider mb-2">Pending Review</p>
-                  <p className="text-3xl font-display font-black text-primary">{applications.length}</p>
+                  <p className="text-sm font-body text-muted-foreground uppercase tracking-wider mb-2">Email Subscribers</p>
+                  <p className="text-3xl font-display font-black text-primary">{emailSubscriptions.length}</p>
                 </div>
                 <div className="w-12 h-12 bg-gradient-hero rounded-luxury flex items-center justify-center shadow-glow">
-                  <AlertCircle className="h-6 w-6 text-white" />
+                  <Mail className="h-6 w-6 text-white" />
                 </div>
               </div>
             </CardContent>
@@ -315,42 +351,54 @@ const Admin = () => {
           </Card>
         </div>
 
-        {/* Applications Table */}
-        <Card className="border-0 shadow-luxury bg-white">
-          <CardHeader className="bg-gradient-to-r from-primary/5 to-primary-glow/5 border-b border-primary/10 p-6">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-              <div>
-                <CardTitle className="text-2xl font-display font-black text-foreground mb-2">
-                  CREATOR APPLICATIONS
-                </CardTitle>
-                <CardDescription className="text-muted-foreground font-body">
-                  Manage your luxury talent pipeline with elite precision
-                </CardDescription>
-              </div>
-              
-              {/* Search and Refresh */}
-              <div className="flex flex-col sm:flex-row gap-3">
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                  <Input
-                    placeholder="Search creators..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-10 w-full sm:w-64 h-10 rounded-luxury border-input focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                  />
+        {/* Tabs for Applications and Email Subscriptions */}
+        <Tabs defaultValue="applications" className="w-full">
+          <TabsList className="grid w-full grid-cols-2 mb-6">
+            <TabsTrigger value="applications" className="font-display font-bold uppercase tracking-wider">
+              Applications ({applications.length})
+            </TabsTrigger>
+            <TabsTrigger value="emails" className="font-display font-bold uppercase tracking-wider">
+              Email Subscriptions ({emailSubscriptions.length})
+            </TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="applications">
+            {/* Applications Table */}
+            <Card className="border-0 shadow-luxury bg-white">
+              <CardHeader className="bg-gradient-to-r from-primary/5 to-primary-glow/5 border-b border-primary/10 p-6">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                  <div>
+                    <CardTitle className="text-2xl font-display font-black text-foreground mb-2">
+                      CREATOR APPLICATIONS
+                    </CardTitle>
+                    <CardDescription className="text-muted-foreground font-body">
+                      Manage your luxury talent pipeline with elite precision
+                    </CardDescription>
+                  </div>
+                  
+                  {/* Search and Refresh */}
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <div className="relative">
+                      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                      <Input
+                        placeholder="Search creators..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        className="pl-10 w-full sm:w-64 h-10 rounded-luxury border-input focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                      />
+                    </div>
+                    
+                    <Button 
+                      onClick={fetchApplications}
+                      disabled={loading}
+                      className="flex items-center gap-2 bg-gradient-hero hover:shadow-glow transition-all duration-300"
+                    >
+                      <Activity className="h-4 w-4" />
+                      {loading ? "Loading..." : "Refresh"}
+                    </Button>
+                  </div>
                 </div>
-                
-                <Button 
-                  onClick={fetchApplications}
-                  disabled={loading}
-                  className="flex items-center gap-2 bg-gradient-hero hover:shadow-glow transition-all duration-300"
-                >
-                  <Activity className="h-4 w-4" />
-                  {loading ? "Loading..." : "Refresh"}
-                </Button>
-              </div>
-            </div>
-          </CardHeader>
+              </CardHeader>
           
           <CardContent className="p-0">
             <div className="overflow-x-auto">
@@ -467,8 +515,97 @@ const Admin = () => {
             </div>
           </CardContent>
         </Card>
-      </main>
-    </div>
+      </TabsContent>
+
+      <TabsContent value="emails">
+        {/* Email Subscriptions Table */}
+        <Card className="border-0 shadow-luxury bg-white">
+          <CardHeader className="bg-gradient-to-r from-primary/5 to-primary-glow/5 border-b border-primary/10 p-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <CardTitle className="text-2xl font-display font-black text-foreground mb-2">
+                  EMAIL SUBSCRIPTIONS
+                </CardTitle>
+                <CardDescription className="text-muted-foreground font-body">
+                  Manage your luxury newsletter subscribers
+                </CardDescription>
+              </div>
+              
+              <Button 
+                onClick={fetchEmailSubscriptions}
+                disabled={emailLoading}
+                className="flex items-center gap-2 bg-gradient-hero hover:shadow-glow transition-all duration-300"
+              >
+                <Activity className="h-4 w-4" />
+                {emailLoading ? "Loading..." : "Refresh"}
+              </Button>
+            </div>
+          </CardHeader>
+          
+          <CardContent className="p-0">
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow className="bg-muted/20 hover:bg-muted/40 border-b border-border">
+                    <TableHead className="font-display font-black text-foreground uppercase tracking-wider p-4">Email Address</TableHead>
+                    <TableHead className="font-display font-black text-foreground uppercase tracking-wider p-4">Subscribed Date</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {emailLoading ? (
+                    <TableRow>
+                      <TableCell colSpan={2} className="text-center py-12">
+                        <div className="flex flex-col items-center space-y-4">
+                          <div className="w-16 h-16 bg-muted/20 rounded-luxury flex items-center justify-center">
+                            <Activity className="h-8 w-8 text-muted-foreground animate-spin" />
+                          </div>
+                          <div>
+                            <p className="font-display font-bold text-muted-foreground text-lg mb-2">Loading subscriptions...</p>
+                            <p className="text-sm text-muted-foreground">Please wait while we fetch the data</p>
+                          </div>
+                        </div>
+                      </TableCell>
+                    </TableRow>
+                  ) : emailSubscriptions.length === 0 ? (
+                    <TableRow>
+                      <TableCell colSpan={2} className="text-center py-12">
+                        <div className="flex flex-col items-center space-y-4">
+                          <div className="w-16 h-16 bg-muted/20 rounded-luxury flex items-center justify-center">
+                            <Mail className="h-8 w-8 text-muted-foreground" />
+                          </div>
+                          <div>
+                            <p className="font-display font-bold text-muted-foreground text-lg mb-2">No subscriptions found</p>
+                            <p className="text-sm text-muted-foreground">Email subscriptions will appear here</p>
+                          </div>
+                        </div>
+                      </TableCell>
+                    </TableRow>
+                  ) : (
+                    emailSubscriptions.map((subscription) => (
+                      <TableRow key={subscription.id} className="hover:bg-muted/20 transition-all duration-200">
+                        <TableCell className="p-4">
+                          <div className="flex items-center gap-2">
+                            <Mail className="h-4 w-4 text-muted-foreground" />
+                            <span className="font-body">{subscription.email}</span>
+                          </div>
+                        </TableCell>
+                        <TableCell className="p-4">
+                          <div className="text-sm font-body text-muted-foreground">
+                            {formatDate(subscription.subscribed_at)}
+                          </div>
+                        </TableCell>
+                      </TableRow>
+                    ))
+                  )}
+                </TableBody>
+              </Table>
+            </div>
+          </CardContent>
+        </Card>
+      </TabsContent>
+    </Tabs>
+  </main>
+</div>
   );
 };
 
