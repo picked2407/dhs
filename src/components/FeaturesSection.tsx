@@ -158,7 +158,7 @@ const FeaturesSection = () => {
           <div className="lg:col-span-1">
             <motion.div
               variants={itemVariants}
-              className="bg-foreground/95 backdrop-blur-sm rounded-2xl p-8 space-y-6 shadow-2xl sticky top-8"
+              className="bg-foreground/95 backdrop-blur-sm rounded-2xl p-8 space-y-6 shadow-2xl sticky top-8 w-full max-w-sm mx-auto lg:max-w-full"
             >
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start space-x-4">
