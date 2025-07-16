@@ -223,8 +223,9 @@ const ExclusiveBenefitsSection = () => {
             variant="outline" 
             size="lg" 
             className="bg-white text-foreground border-white hover:text-primary hover:shadow-white/20 text-sm sm:text-base px-8 sm:px-10 lg:px-12 py-4 h-auto font-display uppercase tracking-wide transition-all duration-300 w-full sm:w-auto max-w-xs sm:max-w-none"
+            asChild
           >
-            Apply Now →
+            <a href="/apply">Apply Now →</a>
           </Button>
         </motion.div>
       </div>

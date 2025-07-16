@@ -31,8 +31,8 @@ const Footer = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 px-4">
-            <Button variant="luxury" size="lg" className="text-sm sm:text-base px-6 sm:px-8 lg:px-12 py-4 h-auto font-display uppercase tracking-wide w-full sm:w-auto max-w-xs sm:max-w-none">
-              Apply Now →
+            <Button variant="luxury" size="lg" className="text-sm sm:text-base px-6 sm:px-8 lg:px-12 py-4 h-auto font-display uppercase tracking-wide w-full sm:w-auto max-w-xs sm:max-w-none" asChild>
+              <a href="/apply">Apply Now →</a>
             </Button>
             <Button variant="outline" size="lg" className="bg-white/10 text-white border-white/30 hover:bg-white/20 text-sm sm:text-base px-6 sm:px-8 lg:px-12 py-4 h-auto font-display uppercase tracking-wide backdrop-blur-sm w-full sm:w-auto max-w-xs sm:max-w-none">
               <span className="hidden sm:inline">Book Discovery Call</span>
@@ -75,7 +75,7 @@ const Footer = () => {
               <ul className="space-y-2 font-body">
                 <li><a href="#" className="text-background/80 hover:text-background transition-colors">About Us</a></li>
                 <li><a href="#" className="text-background/80 hover:text-background transition-colors">Services</a></li>
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">Apply Now</a></li>
+                <li><a href="/apply" className="text-background/80 hover:text-background transition-colors">Apply Now</a></li>
                 <li><a href="#" className="text-background/80 hover:text-background transition-colors">Contact</a></li>
               </ul>
             </div>

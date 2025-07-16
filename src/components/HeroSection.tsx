@@ -199,10 +199,13 @@ const HeroSection = () => {
                 variant="luxury" 
                 size="lg" 
                 className="text-sm sm:text-base lg:text-lg px-6 sm:px-8 lg:px-10 py-4 sm:py-5 lg:py-6 h-auto font-display shadow-glow hover:shadow-luxury transition-all duration-300 w-full sm:w-auto max-w-xs sm:max-w-none"
+                asChild
               >
-                <span className="hidden sm:inline">Send Us A Message</span>
-                <span className="sm:hidden">Contact Us</span>
-                <ArrowRight className="ml-2 h-4 w-4 lg:h-5 lg:w-5" />
+                <a href="https://wa.me/447564839663" target="_blank" rel="noopener noreferrer">
+                  <span className="hidden sm:inline">Send Us A Message</span>
+                  <span className="sm:hidden">Contact Us</span>
+                  <ArrowRight className="ml-2 h-4 w-4 lg:h-5 lg:w-5" />
+                </a>
               </Button>
             </motion.div>
           </motion.div>
