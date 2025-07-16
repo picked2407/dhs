@@ -83,7 +83,7 @@ const PromiseSection = () => {
         
         {/* Subtext */}
         <motion.p variants={itemVariants} className="text-white/70 font-body text-lg sm:text-xl leading-relaxed mb-12 max-w-3xl mx-auto">
-          We've studied what works from the biggest creators in the world — and fixed what doesn't.
+          Follow our proven structure and start getting the results you see from the world's top creators.
         </motion.p>
         
         {/* CTA Button */}
