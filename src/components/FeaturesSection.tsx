@@ -103,17 +103,14 @@ const FeaturesSection = () => {
             variants={itemVariants}
             className="uppercase tracking-[0.2em] text-purple-soft font-body font-medium text-sm mb-8"
           >
-            Everything You Need
+            Our Complete Solution
           </motion.div>
           <motion.h2
             variants={itemVariants}
-            className="font-display font-black text-5xl sm:text-6xl lg:text-7xl leading-[0.9] text-foreground mb-8 relative"
+            className="font-display font-black text-6xl sm:text-7xl lg:text-8xl leading-[0.9] text-foreground mb-8 relative"
           >
-            IT'S ALMOST<br />
-            <span className="bg-gradient-to-r from-purple-soft to-primary bg-clip-text text-transparent">
-              IMPOSSIBLE FOR
-            </span><br />
-            YOU TO FAIL
+            <span className="text-primary">EVERYTHING</span>{' '}
+            <span className="text-foreground">YOU NEED</span>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-soft/20 to-primary/20 blur-3xl -z-10 opacity-30"></div>
           </motion.h2>
           <motion.p
