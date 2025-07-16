@@ -69,7 +69,7 @@ const HeroSection = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="relative min-h-screen flex items-start justify-center overflow-hidden bg-background pt-16 sm:pt-20 md:pt-24 lg:pt-32 px-4 sm:px-6 lg:px-8"
+      className="relative min-h-screen flex items-center md:items-start justify-center overflow-hidden bg-background pt-16 sm:pt-20 md:pt-24 lg:pt-32 px-4 sm:px-6 lg:px-8"
     >
       
       {/* Animated background elements */}
@@ -146,7 +146,7 @@ const HeroSection = () => {
             variants={itemVariants}
             className="inline-flex items-center bg-primary/10 border border-primary/20 rounded-luxury px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8 mt-8 sm:mt-0"
           >
-            <span className="text-primary font-display font-bold uppercase tracking-wide text-xs sm:text-sm">
+            <span className="text-white md:text-primary font-display font-bold uppercase tracking-wide text-xs sm:text-sm">
               Exclusive Talent Management
             </span>
           </motion.div>
@@ -158,13 +158,13 @@ const HeroSection = () => {
           >
             <motion.h1
               variants={slideInLeft}
-              className="text-white md:text-foreground font-display font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-none tracking-tight"
+              className="text-white md:text-foreground font-display font-black text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-none tracking-tight"
             >
               MORE MONEY
             </motion.h1>
             <motion.h1
               variants={slideInLeft}
-              className="text-white md:text-foreground font-display font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-none tracking-tight"
+              className="text-white md:text-foreground font-display font-black text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-none tracking-tight"
             >
               MORE STRUCTURE
             </motion.h1>
@@ -172,7 +172,7 @@ const HeroSection = () => {
               variants={slideInLeft}
               className="relative"
             >
-              <h1 className="bg-gradient-hero bg-clip-text text-transparent font-display font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-none tracking-tight">
+              <h1 className="bg-gradient-hero bg-clip-text text-transparent font-display font-black text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-none tracking-tight">
                 MORE FREEDOM
               </h1>
               <motion.div
@@ -187,7 +187,7 @@ const HeroSection = () => {
           {/* Subheadline */}
           <motion.p
             variants={itemVariants}
-            className="text-white md:text-muted-foreground font-body text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed mb-8 sm:mb-10 max-w-lg text-left"
+            className="text-white md:text-muted-foreground font-body text-base sm:text-lg lg:text-lg xl:text-xl leading-relaxed mb-8 sm:mb-10 max-w-lg text-left"
           >
             Exclusive talent management for ambitious creators ready to scale their income, reclaim their time, and build a true lifestyle.
             Join the top 1% earning 6–7 figures.
