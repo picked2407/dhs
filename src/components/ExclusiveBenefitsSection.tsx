@@ -217,12 +217,12 @@ const ExclusiveBenefitsSection = () => {
           variants={slideInUp}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="text-center"
+          className="text-center px-4"
         >
           <Button 
             variant="outline" 
             size="lg" 
-            className="bg-white text-foreground border-white hover:bg-white/90 text-base px-12 py-4 h-auto font-display uppercase tracking-wide shadow-glow hover:shadow-luxury transition-all duration-300"
+            className="bg-white text-foreground border-white hover:bg-white/90 text-sm sm:text-base px-8 sm:px-10 lg:px-12 py-4 h-auto font-display uppercase tracking-wide shadow-glow hover:shadow-luxury transition-all duration-300 w-full sm:w-auto max-w-xs sm:max-w-none"
           >
             Apply Now →
           </Button>

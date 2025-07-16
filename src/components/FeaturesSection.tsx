@@ -181,10 +181,10 @@ const FeaturesSection = () => {
         {/* CTA Button */}
         <motion.div
           variants={itemVariants}
-          className="text-center"
+          className="text-center px-4"
         >
           <Button 
-            className="bg-gradient-to-r from-purple-soft to-primary text-white font-display font-bold text-base px-12 py-6 h-auto uppercase tracking-wider rounded-2xl shadow-2xl shadow-purple-soft/30 hover:shadow-purple-soft/50 hover:scale-105 transition-all duration-300"
+            className="bg-gradient-to-r from-purple-soft to-primary text-white font-display font-bold text-sm sm:text-base px-8 sm:px-10 lg:px-12 py-4 sm:py-6 h-auto uppercase tracking-wider rounded-2xl shadow-2xl shadow-purple-soft/30 hover:shadow-purple-soft/50 hover:scale-105 transition-all duration-300 w-full sm:w-auto max-w-xs sm:max-w-none"
           >
             APPLY NOW
           </Button>

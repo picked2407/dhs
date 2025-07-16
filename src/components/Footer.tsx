@@ -30,23 +30,24 @@ const Footer = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <Button variant="luxury" size="lg" className="text-base px-12 py-4 h-auto font-display uppercase tracking-wide">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 px-4">
+            <Button variant="luxury" size="lg" className="text-sm sm:text-base px-6 sm:px-8 lg:px-12 py-4 h-auto font-display uppercase tracking-wide w-full sm:w-auto max-w-xs sm:max-w-none">
               Apply Now →
             </Button>
-            <Button variant="outline" size="lg" className="bg-white/10 text-white border-white/30 hover:bg-white/20 text-base px-12 py-4 h-auto font-display uppercase tracking-wide backdrop-blur-sm">
-              Book Discovery Call
+            <Button variant="outline" size="lg" className="bg-white/10 text-white border-white/30 hover:bg-white/20 text-sm sm:text-base px-6 sm:px-8 lg:px-12 py-4 h-auto font-display uppercase tracking-wide backdrop-blur-sm w-full sm:w-auto max-w-xs sm:max-w-none">
+              <span className="hidden sm:inline">Book Discovery Call</span>
+              <span className="sm:hidden">Book Call</span>
             </Button>
           </div>
 
           {/* Newsletter Signup */}
-          <div className="max-w-md mx-auto">
+          <div className="max-w-md mx-auto px-4">
             <h3 className="font-display font-bold text-xl text-white mb-4">
               Stay Updated
             </h3>
-            <div className="flex gap-2">
-              <Input type="email" placeholder="Enter your email" className="bg-white/10 border-white/30 text-white placeholder:text-white/60 backdrop-blur-sm" />
-              <Button variant="apply" className="px-6">
+            <div className="flex flex-col sm:flex-row gap-2">
+              <Input type="email" placeholder="Enter your email" className="bg-white/10 border-white/30 text-white placeholder:text-white/60 backdrop-blur-sm flex-1" />
+              <Button variant="apply" className="px-4 sm:px-6 w-full sm:w-auto">
                 Join
               </Button>
             </div>

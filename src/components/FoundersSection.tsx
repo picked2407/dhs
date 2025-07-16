@@ -155,13 +155,15 @@ const FoundersSection = () => {
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              className="flex justify-center lg:justify-start"
             >
               <Button 
                 variant="luxury" 
                 size="lg" 
-                className="text-base px-12 py-4 h-auto font-display uppercase tracking-wide shadow-glow hover:shadow-luxury transition-all duration-300"
+                className="text-sm sm:text-base px-6 sm:px-8 lg:px-12 py-4 h-auto font-display uppercase tracking-wide shadow-glow hover:shadow-luxury transition-all duration-300 w-full sm:w-auto max-w-sm sm:max-w-none text-center"
               >
-                Unlock your skillset and see results now
+                <span className="hidden sm:inline">Unlock your skillset and see results now</span>
+                <span className="sm:hidden">Get Started Now</span>
               </Button>
             </motion.div>
           </motion.div>

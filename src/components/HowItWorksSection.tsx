@@ -170,12 +170,12 @@ const HowItWorksSection = () => {
           variants={itemVariants}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="text-center mb-12"
+          className="text-center mb-12 px-4"
         >
           <Button 
             variant="luxury" 
             size="lg" 
-            className="text-lg px-12 py-6 h-auto font-display font-bold uppercase tracking-wider shadow-glow hover:shadow-luxury transition-all duration-300"
+            className="text-base sm:text-lg px-8 sm:px-10 lg:px-12 py-4 sm:py-6 h-auto font-display font-bold uppercase tracking-wider shadow-glow hover:shadow-luxury transition-all duration-300 w-full sm:w-auto max-w-xs sm:max-w-none"
           >
             APPLY NOW
           </Button>
@@ -192,7 +192,7 @@ const HowItWorksSection = () => {
           >
             <Button 
               variant="ghost" 
-              className="text-primary font-display font-bold uppercase tracking-wider text-lg p-0 h-auto hover:bg-transparent"
+              className="text-primary font-display font-bold uppercase tracking-wider text-base sm:text-lg p-0 h-auto hover:bg-transparent"
               asChild
             >
               <a href="/contact" className="inline-flex items-center">

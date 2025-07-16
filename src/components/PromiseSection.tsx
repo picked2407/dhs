@@ -91,8 +91,8 @@ const PromiseSection = () => {
         scale: 1.05
       }} whileTap={{
         scale: 0.95
-      }}>
-          <Button className="bg-white text-black font-display font-bold text-base px-16 py-6 h-auto uppercase tracking-wider rounded-full shadow-2xl hover:shadow-white/20 transition-all duration-300 border-2 border-white">
+      }} className="px-4">
+          <Button className="bg-white text-black font-display font-bold text-sm sm:text-base px-8 sm:px-12 lg:px-16 py-4 sm:py-6 h-auto uppercase tracking-wider rounded-full shadow-2xl hover:shadow-white/20 transition-all duration-300 border-2 border-white w-full sm:w-auto max-w-xs sm:max-w-none mx-auto">
             APPLY NOW
           </Button>
         </motion.div>

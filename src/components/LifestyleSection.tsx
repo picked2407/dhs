@@ -169,12 +169,12 @@ const LifestyleSection = () => {
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="pt-4"
+              className="pt-4 flex justify-center lg:justify-start"
             >
               <Button 
                 variant="luxury" 
                 size="lg" 
-                className="text-lg px-12 py-6 h-auto font-display font-bold uppercase tracking-wider shadow-glow hover:shadow-luxury transition-all duration-300"
+                className="text-base sm:text-lg px-8 sm:px-10 lg:px-12 py-4 sm:py-6 h-auto font-display font-bold uppercase tracking-wider shadow-glow hover:shadow-luxury transition-all duration-300 w-full sm:w-auto max-w-xs sm:max-w-none"
               >
                 JOIN TOP 0.1%
               </Button>
