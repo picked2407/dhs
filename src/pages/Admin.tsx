@@ -25,9 +25,9 @@ import {
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
-// Demo credentials
-const ADMIN_EMAIL = "hello@fanslink.app";
-const ADMIN_PASSWORD = "12345";
+// Admin credentials
+const ADMIN_EMAILS = ["tom@morleyconsultants.com", "fskynner@gmail.com"];
+const ADMIN_PASSWORD = "FansLinkMGMT2025@";
 
 type Application = {
   id: string;
@@ -94,7 +94,7 @@ const Admin = () => {
   }, [isAuthenticated]);
 
   const handleLogin = () => {
-    if (loginData.email === ADMIN_EMAIL && loginData.password === ADMIN_PASSWORD) {
+    if (ADMIN_EMAILS.includes(loginData.email) && loginData.password === ADMIN_PASSWORD) {
       setIsAuthenticated(true);
       localStorage.setItem("adminAuth", "true");
       setLoginError("");
@@ -164,7 +164,7 @@ const Admin = () => {
               <Input
                 id="email"
                 type="email"
-                placeholder="hello@fanslink.app"
+                placeholder="Enter admin email"
                 value={loginData.email}
                 onChange={(e) => setLoginData(prev => ({ ...prev, email: e.target.value }))}
                 className="h-12 border-input bg-background rounded-luxury focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
@@ -194,14 +194,6 @@ const Admin = () => {
             >
               ACCESS ADMIN PANEL
             </Button>
-            <div className="text-center pt-4 border-t border-border">
-              <p className="text-xs text-muted-foreground font-body uppercase tracking-wider">
-                Demo Credentials
-              </p>
-              <p className="text-sm text-foreground font-medium">
-                hello@fanslink.app / 12345
-              </p>
-            </div>
           </CardContent>
         </Card>
       </div>
