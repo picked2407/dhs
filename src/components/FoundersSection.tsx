@@ -112,7 +112,7 @@ const FoundersSection = () => {
             >
               {/* Placeholder for founders image */}
               <img 
-                src="/lovable-uploads/ebc60173-3506-4265-b437-a5a094fefaa4.png" 
+                src="/lovable-uploads/dc97a0aa-ad84-4048-86af-1ab47cfda590.png" 
                 alt="Fin & Tom - FansLink Founders" 
                 className="w-full h-full object-cover"
               />
