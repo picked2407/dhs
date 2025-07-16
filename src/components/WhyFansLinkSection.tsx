@@ -125,11 +125,11 @@ const WhyFansLinkSection = () => {
             {/* Description */}
             <motion.div variants={containerVariants} className="space-y-6 text-muted-foreground font-body text-lg leading-relaxed max-w-lg">
               <motion.p variants={itemVariants}>
-                <span className="font-bold text-foreground">Bored of feeling overwhelmed and underpaid?</span> Most agencies treat you like a number. At FansLink, you're a brand, a business, and a star in the making. We don't just manage — we invest in you.
+                <span className="font-bold text-foreground">Tried the Rest? Now try what works.</span> Most agencies treat you like a number. At Fanslink, you're treated as an influencer. The typical agencies have solutions built on guesswork, not real systems. We do things differently. Our frameworks are proven, our operations airtight, and our results speak for themselves.
               </motion.p>
               
               <motion.p variants={itemVariants}>
-                Earn more, work less, and live life on your terms. You win, we win. We're in this together 🤝
+                We don't just manage your content, we give you the roadmap to earn more, work less, and grow faster. When you succeed, we succeed. Simple.
               </motion.p>
             </motion.div>
 
