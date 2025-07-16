@@ -146,14 +146,22 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Contact Info */}
+            {/* Apply Now CTA */}
             <div>
-              <h4 className="font-display font-bold text-lg mb-4">Contact</h4>
-              <ul className="space-y-2 font-body text-background/80">
-                <li>hello@fanslink.com</li>
-                <li>+1 (555) 123-4567</li>
-                <li>Los Angeles, CA</li>
-              </ul>
+              <h4 className="font-display font-bold text-lg mb-4">Ready to Join?</h4>
+              <div className="space-y-3">
+                <p className="font-body text-background/80 text-sm leading-relaxed">
+                  Take the first step towards financial freedom and luxury lifestyle.
+                </p>
+                <Button 
+                  variant="luxury" 
+                  size="sm" 
+                  className="w-full font-display uppercase tracking-wide"
+                  asChild
+                >
+                  <a href="/apply">Apply Now →</a>
+                </Button>
+              </div>
             </div>
           </div>
 
