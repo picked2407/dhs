@@ -219,7 +219,7 @@ const HeroSection = () => {
       {/* Mobile hero video */}
       <motion.div
         variants={slideInRight}
-        className="md:hidden absolute bottom-0 left-0 right-0 h-1/3 sm:h-2/5 opacity-50 sm:opacity-60"
+        className="md:hidden absolute bottom-0 left-0 right-0 h-1/3 opacity-50"
       >
         <video
           autoPlay
@@ -230,7 +230,7 @@ const HeroSection = () => {
         >
           <source src="/woman.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/30 to-transparent" />
       </motion.div>
       
     </motion.section>
