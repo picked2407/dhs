@@ -11,31 +11,17 @@ import {
   Mail, 
   Calendar, 
   TrendingUp, 
-  Eye, 
   Star, 
-  DollarSign, 
   Activity, 
   UserCheck, 
-  Search, 
-  Filter,
+  Search,
   Phone,
   Clock,
-  CheckCircle,
-  XCircle,
   AlertCircle,
-  MoreHorizontal,
   Instagram,
   ExternalLink,
   User
 } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
@@ -384,14 +370,13 @@ const Admin = () => {
                     <TableHead className="font-display font-black text-foreground uppercase tracking-wider p-4">OnlyFans Info</TableHead>
                     <TableHead className="font-display font-black text-foreground uppercase tracking-wider p-4">Content Type</TableHead>
                     <TableHead className="font-display font-black text-foreground uppercase tracking-wider p-4">Status</TableHead>
-                    <TableHead className="font-display font-black text-foreground uppercase tracking-wider p-4">Applied</TableHead>
-                    <TableHead className="font-display font-black text-foreground uppercase tracking-wider p-4">Actions</TableHead>
-                  </TableRow>
-                </TableHeader>
+                     <TableHead className="font-display font-black text-foreground uppercase tracking-wider p-4">Applied</TableHead>
+                   </TableRow>
+                 </TableHeader>
                 <TableBody>
                   {loading ? (
                     <TableRow>
-                      <TableCell colSpan={7} className="text-center py-12">
+                       <TableCell colSpan={6} className="text-center py-12">
                         <div className="flex flex-col items-center space-y-4">
                           <div className="w-16 h-16 bg-muted/20 rounded-luxury flex items-center justify-center">
                             <Activity className="h-8 w-8 text-muted-foreground animate-spin" />
@@ -405,7 +390,7 @@ const Admin = () => {
                     </TableRow>
                   ) : filteredApplications.length === 0 ? (
                     <TableRow>
-                      <TableCell colSpan={7} className="text-center py-12">
+                      <TableCell colSpan={6} className="text-center py-12">
                         <div className="flex flex-col items-center space-y-4">
                           <div className="w-16 h-16 bg-muted/20 rounded-luxury flex items-center justify-center">
                             <Users className="h-8 w-8 text-muted-foreground" />
@@ -481,27 +466,6 @@ const Admin = () => {
                           <div className="text-sm font-body text-muted-foreground">
                             {formatDate(app.created_at)}
                           </div>
-                        </TableCell>
-                        <TableCell className="p-4">
-                          <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                              <Button variant="ghost" className="h-8 w-8 p-0 hover:bg-muted/40 transition-all duration-200">
-                                <span className="sr-only">Open menu</span>
-                                <MoreHorizontal className="h-4 w-4" />
-                              </Button>
-                            </DropdownMenuTrigger>
-                             <DropdownMenuContent align="end" className="w-48">
-                               <DropdownMenuLabel className="font-display font-bold">Actions</DropdownMenuLabel>
-                               <DropdownMenuItem className="flex items-center gap-2 font-body">
-                                 <CheckCircle className="h-4 w-4" />
-                                 Approve
-                               </DropdownMenuItem>
-                               <DropdownMenuItem className="flex items-center gap-2 font-body">
-                                 <XCircle className="h-4 w-4" />
-                                 Reject
-                               </DropdownMenuItem>
-                             </DropdownMenuContent>
-                          </DropdownMenu>
                         </TableCell>
                       </TableRow>
                     ))
