@@ -87,7 +87,7 @@ const HowItWorksSection = () => {
           
           {/* Main heading */}
           <motion.h2 variants={itemVariants} className="text-5xl sm:text-6xl lg:text-7xl font-display font-black text-foreground leading-tight">
-            YOUR ROADMAP TO
+            OUR PROCESS TO
             <span className="block">FINANCIAL FREEDOM</span>
           </motion.h2>
         </motion.div>
