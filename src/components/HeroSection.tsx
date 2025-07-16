@@ -129,7 +129,7 @@ const HeroSection = () => {
             <source src="/woman.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent via-70% to-background" />
-          <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-white/70 to-transparent" />
           
           {/* Floating elements over the video */}
         </div>
