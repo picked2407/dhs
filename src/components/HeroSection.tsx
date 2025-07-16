@@ -187,7 +187,7 @@ const HeroSection = () => {
           {/* Subheadline */}
           <motion.p
             variants={itemVariants}
-            className="text-muted-foreground font-body text-base sm:text-lg lg:text-xl leading-relaxed mb-10 max-w-lg px-4 sm:px-0"
+            className="text-muted-foreground font-body text-base sm:text-lg lg:text-xl leading-relaxed mb-10 max-w-lg text-left"
           >
             Exclusive talent management for ambitious creators ready to scale their income, reclaim their time, and build a true lifestyle.
             Join the top 1% earning 6–7 figures.
@@ -196,7 +196,7 @@ const HeroSection = () => {
           {/* CTA Button */}
           <motion.div
             variants={containerVariants}
-            className="flex justify-center sm:justify-start px-4 sm:px-0"
+            className="flex justify-start"
           >
             <motion.div variants={buttonVariants} whileHover="hover">
               <Button 
