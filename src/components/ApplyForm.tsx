@@ -5,6 +5,7 @@ import * as z from "zod";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import { OnlyFansSection } from "./form-sections/OnlyFansSection";
 import { ContentSection } from "./form-sections/ContentSection";
 import { ContactSection } from "./form-sections/ContactSection";
@@ -57,8 +58,28 @@ export function ApplyForm() {
 
   const onSubmit = async (data: FormData) => {
     try {
-      // Here you would typically send the data to your backend
-      console.log("Form data:", data);
+      const { error } = await supabase
+        .from('applications')
+        .insert([
+          {
+            has_only_fans: data.hasOnlyFans,
+            only_fans_duration: data.onlyFansDuration,
+            has_agency: data.hasAgency,
+            monthly_earning: data.monthlyEarning,
+            instagram_handle: data.instagramHandle,
+            content_type: data.contentType,
+            help_needed: data.helpNeeded,
+            full_name: data.fullName,
+            email: data.email,
+            phone_number: data.phoneNumber,
+            additional_notes: data.additionalNotes || null,
+          }
+        ]);
+
+      if (error) {
+        throw error;
+      }
+
       toast({
         title: "Application Submitted!",
         description: "We'll review your application and get back to you within 24 hours.",
@@ -66,6 +87,7 @@ export function ApplyForm() {
       form.reset();
       setCurrentSection(1);
     } catch (error) {
+      console.error("Error submitting application:", error);
       toast({
         title: "Error",
         description: "There was an error submitting your application. Please try again.",

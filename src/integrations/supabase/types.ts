@@ -14,7 +14,57 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      applications: {
+        Row: {
+          additional_notes: string | null
+          content_type: string[]
+          created_at: string
+          email: string
+          full_name: string
+          has_agency: string
+          has_only_fans: string
+          help_needed: string[]
+          id: string
+          instagram_handle: string
+          monthly_earning: string
+          only_fans_duration: string
+          phone_number: string
+          updated_at: string
+        }
+        Insert: {
+          additional_notes?: string | null
+          content_type: string[]
+          created_at?: string
+          email: string
+          full_name: string
+          has_agency: string
+          has_only_fans: string
+          help_needed: string[]
+          id?: string
+          instagram_handle: string
+          monthly_earning: string
+          only_fans_duration: string
+          phone_number: string
+          updated_at?: string
+        }
+        Update: {
+          additional_notes?: string | null
+          content_type?: string[]
+          created_at?: string
+          email?: string
+          full_name?: string
+          has_agency?: string
+          has_only_fans?: string
+          help_needed?: string[]
+          id?: string
+          instagram_handle?: string
+          monthly_earning?: string
+          only_fans_duration?: string
+          phone_number?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
