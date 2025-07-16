@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import MinimalFooter from "@/components/MinimalFooter";
 import { Button } from "@/components/ui/button";
 
 const NotFound = () => {
@@ -37,7 +37,7 @@ const NotFound = () => {
         </div>
       </div>
       
-      <Footer />
+      <MinimalFooter />
     </div>
   );
 };
