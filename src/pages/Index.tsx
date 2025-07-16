@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import ValuePropositions from "@/components/ValuePropositions";
@@ -9,8 +11,21 @@ import ExclusiveBenefitsSection from "@/components/ExclusiveBenefitsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import FoundersSection from "@/components/FoundersSection";
 import Footer from "@/components/Footer";
+import { WhatsAppContactDialog } from "@/components/WhatsAppContactDialog";
 
 const Index = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [showWhatsAppDialog, setShowWhatsAppDialog] = useState(false);
+
+  useEffect(() => {
+    const submitted = searchParams.get('submitted');
+    if (submitted === 'true') {
+      setShowWhatsAppDialog(true);
+      // Clean up URL parameter
+      setSearchParams({});
+    }
+  }, [searchParams, setSearchParams]);
+
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -24,6 +39,11 @@ const Index = () => {
       <HowItWorksSection />
       <FoundersSection />
       <Footer />
+      
+      <WhatsAppContactDialog 
+        open={showWhatsAppDialog} 
+        onOpenChange={setShowWhatsAppDialog} 
+      />
     </div>
   );
 };

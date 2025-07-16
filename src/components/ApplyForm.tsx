@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
@@ -38,6 +39,7 @@ type FormData = z.infer<typeof formSchema>;
 export function ApplyForm() {
   const [currentSection, setCurrentSection] = useState(1);
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -85,9 +87,9 @@ export function ApplyForm() {
         description: "We'll review your application and get back to you within 24 hours.",
       });
       
-      // Redirect to WhatsApp after successful submission
+      // Redirect to home page with popup trigger
       setTimeout(() => {
-        window.location.href = "https://wa.me/447564839663";
+        navigate('/?submitted=true');
       }, 1500);
       
       form.reset();
