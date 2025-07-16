@@ -87,7 +87,8 @@ const HowItWorksSection = () => {
           
           {/* Main heading */}
           <motion.h2 variants={itemVariants} className="text-5xl sm:text-6xl lg:text-7xl font-display font-black text-foreground leading-tight">
-            OUR PROCESS TO
+            <span className="block sm:inline">OUR</span>{' '}
+            <span className="block sm:inline">PROCESS TO</span>
             <span className="block">FINANCIAL FREEDOM</span>
           </motion.h2>
         </motion.div>
