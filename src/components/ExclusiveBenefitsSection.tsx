@@ -142,8 +142,7 @@ const ExclusiveBenefitsSection = () => {
           </motion.div>
           
           <motion.h2 variants={itemVariants} className="font-display font-black text-4xl sm:text-5xl lg:text-6xl leading-tight text-white mb-8">
-            IT COSTS YOU <br />
-            <span className="text-primary">NOTHING UPFRONT</span>
+            <span className="text-primary">We Only Win When You Do</span>
           </motion.h2>
           
           <motion.p variants={itemVariants} className="text-white/80 font-body text-lg leading-relaxed mb-12 max-w-3xl mx-auto">
