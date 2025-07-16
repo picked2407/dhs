@@ -116,8 +116,9 @@ const WhyFansLinkSection = () => {
               </motion.div>
               
               <motion.h2 variants={itemVariants} className="font-display font-black text-5xl sm:text-6xl lg:text-7xl leading-[0.9] text-foreground">
-                MAKE MONEY,<br />
-                <span className="text-foreground">EFFORTLESSLY</span>
+                BETTER SYSTEMS<br />
+                BETTER SUPPORT<br />
+                BETTER <span className="bg-gradient-hero bg-clip-text text-transparent">RESULTS</span>
               </motion.h2>
             </motion.div>
 
