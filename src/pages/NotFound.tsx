@@ -1,5 +1,8 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
 
 const NotFound = () => {
   const location = useLocation();
@@ -12,14 +15,29 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
+    <div className="min-h-screen flex flex-col">
+      <Navigation />
+      
+      <div className="flex-1 flex items-center justify-center bg-background">
+        <div className="text-center max-w-2xl px-6">
+          <h1 className="font-display text-6xl md:text-8xl font-bold text-foreground mb-6">
+            OOPS! THAT PAGE CAN'T BE FOUND.
+          </h1>
+          <p className="font-body text-lg text-muted-foreground mb-8 max-w-md mx-auto">
+            It looks like nothing was found at this location. Maybe try to go back to the home page?
+          </p>
+          <Button 
+            variant="luxury" 
+            size="lg" 
+            className="font-display uppercase tracking-wide"
+            asChild
+          >
+            <a href="/">Return to Home</a>
+          </Button>
+        </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };
