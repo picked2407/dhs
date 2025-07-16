@@ -73,17 +73,6 @@ const Navigation = () => {
               Services
             </a>
             <a 
-              href="#price" 
-              onClick={(e) => handleSmoothScroll(e, 'price')}
-              className={`font-body font-medium uppercase tracking-wider text-sm transition-colors ${
-                isScrolled 
-                  ? "text-foreground/80 hover:text-foreground" 
-                  : "text-black/80 hover:text-black"
-              }`}
-            >
-              Price
-            </a>
-            <a 
               href="#team" 
               onClick={(e) => handleSmoothScroll(e, 'team')}
               className={`font-body font-medium uppercase tracking-wider text-sm transition-colors ${
@@ -130,13 +119,6 @@ const Navigation = () => {
                     className="font-body font-medium uppercase tracking-wider text-lg text-foreground hover:text-primary transition-colors"
                   >
                     Services
-                  </a>
-                  <a 
-                    href="#price" 
-                    onClick={(e) => handleSmoothScroll(e, 'price')}
-                    className="font-body font-medium uppercase tracking-wider text-lg text-foreground hover:text-primary transition-colors"
-                  >
-                    Price
                   </a>
                   <a 
                     href="#team" 
