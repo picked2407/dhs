@@ -25,7 +25,8 @@ import {
   AlertCircle,
   MoreHorizontal,
   Instagram,
-  ExternalLink
+  ExternalLink,
+  User
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -421,7 +422,10 @@ const Admin = () => {
                       <TableRow key={app.id} className="hover:bg-muted/20 transition-all duration-200">
                          <TableCell className="p-4">
                            <div className="space-y-1">
-                             <div className="font-display font-bold text-foreground">{app.full_name}</div>
+                             <div className="flex items-center gap-2 font-display font-bold text-foreground">
+                               <User className="h-4 w-4 text-muted-foreground" />
+                               {app.full_name}
+                             </div>
                              <div className="flex items-center gap-2 text-sm text-muted-foreground font-body">
                                <span>@{app.instagram_handle}</span>
                                <a
