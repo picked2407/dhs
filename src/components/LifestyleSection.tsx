@@ -141,7 +141,7 @@ const LifestyleSection = () => {
                 Earn More • Work Less
               </div>
               
-              <h2 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl leading-[0.9] text-foreground">
+              <h2 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl leading-tight text-foreground">
                 DESIGNED FOR{" "}
                 <span className="bg-gradient-hero bg-clip-text text-transparent">
                   CONSISTENCY
