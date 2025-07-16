@@ -154,13 +154,13 @@ const LifestyleSection = () => {
             {/* Description */}
             <motion.div variants={itemVariants} className="space-y-6 text-muted-foreground font-body text-lg leading-relaxed">
               <p className="font-semibold text-foreground text-xl">
-                You've seen our girls on Instagram — flying first-class around the world, 
-                sipping Champagne, G-Wagons in the driveway...
+                You see it every day on social media; traveling the world, connecting with successful people, 
+                dining at the best restaurants, and driving luxury cars.
               </p>
               
               <p className="text-lg">
-                Now it's your turn to join the top 0.1% while working just two days a week 
-                from anywhere in the world 👑
+                With consistent systems and a team behind you, your account runs even when you're not watching. 
+                No burnout. No guesswork. Just systems that scale.
               </p>
             </motion.div>
 
