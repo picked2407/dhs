@@ -139,7 +139,7 @@ const HeroSection = () => {
         variants={containerVariants}
         className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full"
       >
-        <div className="lg:w-3/5 lg:pr-12 xl:pr-16">
+        <div className="lg:w-1/2 xl:w-2/5 lg:pr-12 xl:pr-16">
           
           {/* Badge */}
           <motion.div
@@ -158,13 +158,13 @@ const HeroSection = () => {
           >
             <motion.h1
               variants={slideInLeft}
-              className="text-foreground font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-none tracking-tight"
+              className="text-foreground font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl leading-none tracking-tight"
             >
               MORE MONEY
             </motion.h1>
             <motion.h1
               variants={slideInLeft}
-              className="text-foreground font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-none tracking-tight"
+              className="text-foreground font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl leading-none tracking-tight"
             >
               MORE STRUCTURE
             </motion.h1>
@@ -172,7 +172,7 @@ const HeroSection = () => {
               variants={slideInLeft}
               className="relative"
             >
-              <h1 className="bg-gradient-hero bg-clip-text text-transparent font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-none tracking-tight">
+              <h1 className="bg-gradient-hero bg-clip-text text-transparent font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl leading-none tracking-tight">
                 MORE FREEDOM
               </h1>
               <motion.div
