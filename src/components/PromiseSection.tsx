@@ -63,7 +63,7 @@ const PromiseSection = () => {
         </motion.div>
         
         {/* Main Headline */}
-        <motion.h1 variants={containerVariants} className="font-display font-black text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[0.85] text-white mb-8">
+        <motion.h1 variants={containerVariants} className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.85] text-white mb-8">
           WE'LL{' '}
           <motion.span initial={{
           backgroundPosition: "0% 50%"
@@ -78,7 +78,7 @@ const PromiseSection = () => {
           </motion.span>{' '}
           YOUR SYSTEMS<br />
           IN 90 DAYS<br />
-          <motion.span variants={itemVariants} className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl"> OR WE'LL WORK FOR FREE</motion.span>
+          <motion.span variants={itemVariants} className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"> OR WE'LL WORK FOR FREE</motion.span>
         </motion.h1>
         
         {/* Subtext */}
