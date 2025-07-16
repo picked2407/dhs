@@ -184,18 +184,18 @@ export function ApplyForm() {
 
       {/* Form */}
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
           {currentSection === 1 && <OnlyFansSection control={form.control} />}
           {currentSection === 2 && <ContentSection control={form.control} />}
           {currentSection === 3 && <ContactSection control={form.control} />}
 
-          <div className="flex justify-between pt-8">
+          <div className="flex flex-col sm:flex-row justify-between gap-4 pt-6 sm:pt-8">
             <Button
               type="button"
               variant="outline"
               onClick={prevSection}
               disabled={currentSection === 1}
-              className="px-8 font-heading font-medium"
+              className="px-6 sm:px-8 font-heading font-medium w-full sm:w-auto order-1 sm:order-none"
             >
               Back
             </Button>
@@ -204,14 +204,14 @@ export function ApplyForm() {
               <Button 
                 type="button" 
                 onClick={nextSection}
-                className="px-8 bg-primary hover:bg-primary/90 font-heading font-medium"
+                className="px-6 sm:px-8 bg-primary hover:bg-primary/90 font-heading font-medium w-full sm:w-auto order-2 sm:order-none"
               >
                 Next
               </Button>
             ) : (
               <Button 
                 type="submit"
-                className="px-8 bg-primary hover:bg-primary/90 font-heading font-medium"
+                className="px-6 sm:px-8 bg-primary hover:bg-primary/90 font-heading font-medium w-full sm:w-auto order-2 sm:order-none"
               >
                 Submit Application
               </Button>

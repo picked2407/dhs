@@ -24,9 +24,9 @@ const Apply = () => {
   }, [images.length]);
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex flex-col lg:flex-row">
       {/* Left Side - Sliding Image Gallery */}
-      <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
+      <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden min-h-[40vh] lg:min-h-screen">
         {images.map((image, index) => (
           <div
             key={index}
@@ -47,13 +47,13 @@ const Apply = () => {
         ))}
         
         {/* Image Navigation Dots */}
-        <div className="absolute bottom-8 left-8 flex space-x-3 z-10">
+        <div className="absolute bottom-4 sm:bottom-6 lg:bottom-8 left-4 sm:left-6 lg:left-8 flex space-x-2 sm:space-x-3 z-10">
           {images.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentImageIndex(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentImageIndex 
+              className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+                index === currentImageIndex
                   ? 'bg-white scale-125' 
                   : 'bg-white/50 hover:bg-white/75'
               }`}
@@ -63,8 +63,8 @@ const Apply = () => {
       </div>
 
       {/* Right Side - Application Form */}
-      <div className="w-full lg:w-1/2 bg-background flex items-center justify-center p-6 lg:p-12">
-        <div className="w-full max-w-lg">
+      <div className="w-full lg:w-1/2 bg-background flex items-center justify-center p-4 sm:p-6 lg:p-12 min-h-screen">
+        <div className="w-full max-w-sm sm:max-w-md lg:max-w-lg">
           <ApplyForm />
         </div>
       </div>

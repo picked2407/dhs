@@ -55,52 +55,52 @@ const LifestyleSection = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/10 opacity-50"></div>
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl transform translate-x-32 -translate-y-32"></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div 
           variants={containerVariants}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[600px]"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center min-h-[400px] sm:min-h-[500px] lg:min-h-[600px]"
         >
           
           {/* Left - Image Grid */}
-          <motion.div variants={itemVariants} className="relative">
-            <div className="grid grid-cols-2 gap-4 h-[500px]">
+          <motion.div variants={itemVariants} className="relative order-2 lg:order-1">
+            <div className="grid grid-cols-2 gap-2 sm:gap-4 h-[300px] sm:h-[400px] lg:h-[500px]">
               {/* Top Left - Yacht */}
               <motion.div variants={imageVariants} className="relative group">
                 <div className="absolute inset-0 bg-gradient-hero rounded-luxury blur opacity-20 group-hover:opacity-30 transition-opacity z-0"></div>
                 <img 
                   src={luxuryYachtBranded} 
                   alt="Luxury yacht lifestyle with branded swimwear" 
-                  className="relative rounded-luxury w-full h-[240px] object-cover shadow-luxury hover:scale-105 transition-transform duration-500 z-10"
+                  className="relative rounded-luxury w-full h-[140px] sm:h-[180px] lg:h-[240px] object-cover shadow-luxury hover:scale-105 transition-transform duration-500 z-10"
                 />
               </motion.div>
               
               {/* Top Right - Beach */}
-              <motion.div variants={imageVariants} className="relative group mt-8">
+              <motion.div variants={imageVariants} className="relative group mt-4 sm:mt-6 lg:mt-8">
                 <div className="absolute inset-0 bg-gradient-hero rounded-luxury blur opacity-20 group-hover:opacity-30 transition-opacity z-0"></div>
                 <img 
                   src={beachLifestyleBranded} 
                   alt="Beach lifestyle with branded beachwear" 
-                  className="relative rounded-luxury w-full h-[240px] object-cover shadow-luxury hover:scale-105 transition-transform duration-500 z-10"
+                  className="relative rounded-luxury w-full h-[140px] sm:h-[180px] lg:h-[240px] object-cover shadow-luxury hover:scale-105 transition-transform duration-500 z-10"
                 />
               </motion.div>
               
               {/* Bottom Left - Private Jet */}
-              <motion.div variants={imageVariants} className="relative group -mt-4">
+              <motion.div variants={imageVariants} className="relative group -mt-2 sm:-mt-4">
                 <div className="absolute inset-0 bg-gradient-hero rounded-luxury blur opacity-20 group-hover:opacity-30 transition-opacity z-0"></div>
                 <img 
                   src={privateJetBranded} 
                   alt="Private jet lifestyle with branded fashion" 
-                  className="relative rounded-luxury w-full h-[240px] object-cover shadow-luxury hover:scale-105 transition-transform duration-500 z-10"
+                  className="relative rounded-luxury w-full h-[140px] sm:h-[180px] lg:h-[240px] object-cover shadow-luxury hover:scale-105 transition-transform duration-500 z-10"
                 />
               </motion.div>
               
               {/* Bottom Right - Luxury Car */}
-              <motion.div variants={imageVariants} className="relative group mt-4">
+              <motion.div variants={imageVariants} className="relative group mt-2 sm:mt-4">
                 <div className="absolute inset-0 bg-gradient-hero rounded-luxury blur opacity-20 group-hover:opacity-30 transition-opacity z-0"></div>
                 <img 
                   src={luxuryCarBranded} 
                   alt="Luxury car lifestyle with branded clothing" 
-                  className="relative rounded-luxury w-full h-[240px] object-cover shadow-luxury hover:scale-105 transition-transform duration-500 z-10"
+                  className="relative rounded-luxury w-full h-[140px] sm:h-[180px] lg:h-[240px] object-cover shadow-luxury hover:scale-105 transition-transform duration-500 z-10"
                 />
               </motion.div>
             </div>
@@ -134,14 +134,14 @@ const LifestyleSection = () => {
           </motion.div>
 
           {/* Right - Content */}
-          <motion.div variants={containerVariants} className="space-y-8">
+          <motion.div variants={containerVariants} className="space-y-6 sm:space-y-8 order-1 lg:order-2 text-center lg:text-left">
             {/* Header */}
-            <motion.div variants={itemVariants} className="space-y-6">
+            <motion.div variants={itemVariants} className="space-y-4 sm:space-y-6">
               <div className="uppercase tracking-[0.3em] text-primary font-display font-bold text-sm">
                 Earn More • Work Less
               </div>
               
-              <h2 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl leading-tight text-foreground">
+              <h2 className="font-display font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight text-foreground">
                 DESIGNED FOR{" "}
                 <span className="bg-gradient-hero bg-clip-text text-transparent">
                   CONSISTENCY
@@ -152,13 +152,13 @@ const LifestyleSection = () => {
             </motion.div>
 
             {/* Description */}
-            <motion.div variants={itemVariants} className="space-y-6 text-muted-foreground font-body text-lg leading-relaxed">
-              <p className="font-semibold text-foreground text-xl">
+            <motion.div variants={itemVariants} className="space-y-4 sm:space-y-6 text-muted-foreground font-body text-base sm:text-lg leading-relaxed">
+              <p className="font-semibold text-foreground text-lg sm:text-xl">
                 You see it every day on social media; traveling the world, connecting with successful people, 
                 dining at the best restaurants, and driving luxury cars.
               </p>
               
-              <p className="text-lg">
+              <p className="text-base sm:text-lg">
                 With consistent systems and a team behind you, your account runs even when you're not watching. 
                 No burnout. No guesswork. Just systems that scale.
               </p>
@@ -174,7 +174,7 @@ const LifestyleSection = () => {
               <Button 
                 variant="luxury" 
                 size="lg" 
-                className="text-base sm:text-lg px-8 sm:px-10 lg:px-12 py-4 sm:py-6 h-auto font-display font-bold uppercase tracking-wider shadow-glow hover:shadow-luxury transition-all duration-300 w-full sm:w-auto max-w-xs sm:max-w-none"
+                className="text-sm sm:text-base lg:text-lg px-6 sm:px-8 lg:px-12 py-3 sm:py-4 lg:py-6 h-auto font-display font-bold uppercase tracking-wider shadow-glow hover:shadow-luxury transition-all duration-300 w-full sm:w-auto max-w-xs sm:max-w-none lg:max-w-fit"
               >
                 JOIN TOP 0.1%
               </Button>
