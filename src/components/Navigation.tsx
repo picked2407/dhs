@@ -62,17 +62,6 @@ const Navigation = () => {
               Earn More
             </a>
             <a 
-              href="#team" 
-              onClick={(e) => handleSmoothScroll(e, 'team')}
-              className={`font-body font-medium uppercase tracking-wider text-sm transition-colors ${
-                isScrolled 
-                  ? "text-foreground/80 hover:text-foreground" 
-                  : "text-black/80 hover:text-black"
-              }`}
-            >
-              Our Team
-            </a>
-            <a 
               href="#services" 
               onClick={(e) => handleSmoothScroll(e, 'services')}
               className={`font-body font-medium uppercase tracking-wider text-sm transition-colors ${
@@ -93,6 +82,17 @@ const Navigation = () => {
               }`}
             >
               Price
+            </a>
+            <a 
+              href="#team" 
+              onClick={(e) => handleSmoothScroll(e, 'team')}
+              className={`font-body font-medium uppercase tracking-wider text-sm transition-colors ${
+                isScrolled 
+                  ? "text-foreground/80 hover:text-foreground" 
+                  : "text-black/80 hover:text-black"
+              }`}
+            >
+              Our Team
             </a>
             <Button variant="default" size="sm" className="h-8 px-4 bg-primary hover:bg-primary/90" asChild>
               <a href="/apply">Apply</a>
@@ -125,13 +125,6 @@ const Navigation = () => {
                     Earn More
                   </a>
                   <a 
-                    href="#team" 
-                    onClick={(e) => handleSmoothScroll(e, 'team')}
-                    className="font-body font-medium uppercase tracking-wider text-lg text-foreground hover:text-primary transition-colors"
-                  >
-                    Our Team
-                  </a>
-                  <a 
                     href="#services" 
                     onClick={(e) => handleSmoothScroll(e, 'services')}
                     className="font-body font-medium uppercase tracking-wider text-lg text-foreground hover:text-primary transition-colors"
@@ -144,6 +137,13 @@ const Navigation = () => {
                     className="font-body font-medium uppercase tracking-wider text-lg text-foreground hover:text-primary transition-colors"
                   >
                     Price
+                  </a>
+                  <a 
+                    href="#team" 
+                    onClick={(e) => handleSmoothScroll(e, 'team')}
+                    className="font-body font-medium uppercase tracking-wider text-lg text-foreground hover:text-primary transition-colors"
+                  >
+                    Our Team
                   </a>
                   <Button 
                     variant="default" 
