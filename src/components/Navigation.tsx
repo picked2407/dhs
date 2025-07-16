@@ -42,9 +42,12 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center">
             <img 
-              src="/lovable-uploads/a2e9426f-c0b6-4dd2-92d3-0fee2d2d9acf.png" 
+              src={isScrolled 
+                ? "/lovable-uploads/a2e9426f-c0b6-4dd2-92d3-0fee2d2d9acf.png" 
+                : "/lovable-uploads/7614be81-f6cf-4b45-9c77-f5ba71d8c9ff.png"
+              }
               alt="FansLink Logo" 
-              className="h-12 w-auto"
+              className="h-12 w-auto transition-all duration-300"
             />
           </div>
 
@@ -56,7 +59,7 @@ const Navigation = () => {
               className={`font-body font-medium uppercase tracking-wider text-sm transition-colors ${
                 isScrolled 
                   ? "text-foreground/80 hover:text-foreground" 
-                  : "text-black/80 hover:text-black"
+                  : "text-white/80 hover:text-white"
               }`}
             >
               Earn More
@@ -67,7 +70,7 @@ const Navigation = () => {
               className={`font-body font-medium uppercase tracking-wider text-sm transition-colors ${
                 isScrolled 
                   ? "text-foreground/80 hover:text-foreground" 
-                  : "text-black/80 hover:text-black"
+                  : "text-white/80 hover:text-white"
               }`}
             >
               Services
@@ -78,7 +81,7 @@ const Navigation = () => {
               className={`font-body font-medium uppercase tracking-wider text-sm transition-colors ${
                 isScrolled 
                   ? "text-foreground/80 hover:text-foreground" 
-                  : "text-black/80 hover:text-black"
+                  : "text-white/80 hover:text-white"
               }`}
             >
               Our Team
@@ -95,10 +98,10 @@ const Navigation = () => {
                 <Button 
                   variant="ghost" 
                   size="icon"
-                  className={`${
+                  className={`transition-colors ${
                     isScrolled 
                       ? "text-foreground hover:text-foreground" 
-                      : "text-black hover:text-black"
+                      : "text-white hover:text-white"
                   }`}
                 >
                   <Menu className="h-6 w-6" />
