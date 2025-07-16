@@ -144,7 +144,7 @@ const HeroSection = () => {
           {/* Badge */}
           <motion.div
             variants={itemVariants}
-            className="inline-flex items-center bg-primary/10 border border-primary/20 rounded-luxury px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8"
+            className="inline-flex items-center bg-primary/10 border border-primary/20 rounded-luxury px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8 mt-8 sm:mt-0"
           >
             <span className="text-primary font-display font-bold uppercase tracking-wide text-xs sm:text-sm">
               Exclusive Talent Management
