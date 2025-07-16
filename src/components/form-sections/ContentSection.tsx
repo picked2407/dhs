@@ -52,7 +52,7 @@ export function ContentSection({ control }: ContentSectionProps) {
                 <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">@</span>
                 <Input 
                   placeholder="username" 
-                  className="h-12 pl-8 text-base border-2 rounded-xl hover:border-primary/50 focus:border-primary transition-colors"
+                  className="h-12 pl-8 text-base border-2 rounded-xl transition-colors"
                   {...field} 
                 />
               </div>
@@ -85,14 +85,14 @@ export function ContentSection({ control }: ContentSectionProps) {
                     }}
                     className="peer absolute opacity-0 w-full h-full cursor-pointer"
                   />
-                  <Label 
-                    htmlFor={type.id} 
-                    className="flex items-center p-4 border-2 border-border rounded-xl cursor-pointer transition-all duration-200 peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white hover:border-primary/50 hover:bg-primary/5"
+                  <Label
+                    htmlFor={type.id}
+                    className={`flex items-center p-4 border-2 rounded-xl cursor-pointer transition-all duration-200 font-medium ${field.value?.includes(type.id) ? 'border-[#9E5AF2] bg-[#9E5AF2] text-white' : 'border-border bg-transparent text-foreground'} hover:border-[#9E5AF2]/50 hover:bg-[#9E5AF2]/10`}
                   >
-                    <div className="w-5 h-5 border-2 border-current rounded-md mr-3 flex items-center justify-center transition-all duration-200 peer-checked:border-white peer-checked:bg-white">
-                      <svg 
-                        className="w-3 h-3 text-primary opacity-0 peer-checked:opacity-100 transition-opacity duration-200" 
-                        fill="currentColor" 
+                    <div className={`w-5 h-5 border-2 rounded-md mr-3 flex items-center justify-center transition-all duration-200 ${field.value?.includes(type.id) ? 'border-white bg-white' : 'border-current bg-transparent'}`}>
+                      <svg
+                        className={`w-3 h-3 text-primary transition-opacity duration-200 ${field.value?.includes(type.id) ? 'opacity-100' : 'opacity-0'}`}
+                        fill="currentColor"
                         viewBox="0 0 20 20"
                       >
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -131,14 +131,14 @@ export function ContentSection({ control }: ContentSectionProps) {
                     }}
                     className="peer absolute opacity-0 w-full h-full cursor-pointer"
                   />
-                  <Label 
-                    htmlFor={option.id} 
-                    className="flex items-center p-4 border-2 border-border rounded-xl cursor-pointer transition-all duration-200 peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white hover:border-primary/50 hover:bg-primary/5"
+                  <Label
+                    htmlFor={option.id}
+                    className={`flex items-center p-4 border-2 rounded-xl cursor-pointer transition-all duration-200 font-medium ${field.value?.includes(option.id) ? 'border-[#9E5AF2] bg-[#9E5AF2] text-white' : 'border-border bg-transparent text-foreground'} hover:border-[#9E5AF2]/50 hover:bg-[#9E5AF2]/10`}
                   >
-                    <div className="w-5 h-5 border-2 border-current rounded-md mr-3 flex items-center justify-center transition-all duration-200 peer-checked:border-white peer-checked:bg-white">
-                      <svg 
-                        className="w-3 h-3 text-primary opacity-0 peer-checked:opacity-100 transition-opacity duration-200" 
-                        fill="currentColor" 
+                    <div className={`w-5 h-5 border-2 rounded-md mr-3 flex items-center justify-center transition-all duration-200 ${field.value?.includes(option.id) ? 'border-white bg-white' : 'border-current bg-transparent'}`}>
+                      <svg
+                        className={`w-3 h-3 text-primary transition-opacity duration-200 ${field.value?.includes(option.id) ? 'opacity-100' : 'opacity-0'}`}
+                        fill="currentColor"
                         viewBox="0 0 20 20"
                       >
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
