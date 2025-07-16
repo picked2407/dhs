@@ -188,7 +188,7 @@ const HeroSection = () => {
           {/* Subheadline */}
           <motion.p
             variants={itemVariants}
-            className="text-muted-foreground font-body text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed mb-8 sm:mb-10 max-w-md lg:max-w-lg"
+            className="text-white md:text-muted-foreground font-body text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed mb-8 sm:mb-10 max-w-md lg:max-w-lg"
           >
             Exclusive talent management for ambitious creators ready to scale their income, reclaim their time, and build a true lifestyle.
             Join the top 1% earning 6–7 figures.
