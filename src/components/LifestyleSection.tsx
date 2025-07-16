@@ -142,12 +142,12 @@ const LifestyleSection = () => {
               </div>
               
               <h2 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl leading-[0.9] text-foreground">
-                DESIGNED FOR{" "}
+                BETTER SYSTEMS<br />
+                BETTER SUPPORT<br />
+                BETTER{" "}
                 <span className="bg-gradient-hero bg-clip-text text-transparent">
-                  CONSISTENCY
+                  RESULTS
                 </span>
-                <br />
-                POWERED BY OUR SYSTEMS
               </h2>
             </motion.div>
 
