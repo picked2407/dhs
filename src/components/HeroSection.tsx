@@ -72,9 +72,6 @@ const HeroSection = () => {
       className="relative min-h-screen flex items-start justify-center overflow-hidden bg-background pt-16 sm:pt-20 md:pt-24 lg:pt-32 px-4 sm:px-6 lg:px-8"
     >
       
-      {/* White gradient overlay from top for mobile */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-white/50 to-transparent z-5 md:hidden"></div>
-      
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <motion.div
@@ -140,9 +137,9 @@ const HeroSection = () => {
       {/* Content - Left side */}
       <motion.div
         variants={containerVariants}
-        className="relative z-20 max-w-7xl mx-auto w-full"
+        className="relative z-10 max-w-7xl mx-auto w-full"
       >
-        <div className="lg:w-3/5 lg:pr-8 xl:pr-12 2xl:pr-16 text-center sm:text-left">
+        <div className="lg:w-3/5 lg:pr-8 xl:pr-12 2xl:pr-16">
           
           {/* Badge */}
           <motion.div
@@ -222,7 +219,7 @@ const HeroSection = () => {
       {/* Mobile hero video */}
       <motion.div
         variants={slideInRight}
-        className="md:hidden absolute bottom-0 left-0 right-0 h-1/4 sm:h-1/3 opacity-30 z-0"
+        className="md:hidden absolute bottom-0 left-0 right-0 h-1/3 sm:h-2/5 opacity-50 sm:opacity-60"
       >
         <video
           autoPlay
