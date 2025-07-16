@@ -7,13 +7,12 @@ const MinimalFooter = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
           {/* Logo and Description */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center">
               <img 
-                src="/lovable-uploads/3ad67c27-4fe0-45d4-ba24-4f5d3c346df6.png" 
+                src="/lovable-uploads/fec34ed6-7e36-4a66-8c41-36f04922ab04.png" 
                 alt="Fanslink Logo" 
-                className="w-10 h-10"
+                className="w-12 h-12"
               />
-              <h3 className="font-display text-xl font-bold text-white">fanslink</h3>
             </div>
             <p className="font-body text-white/80 text-sm leading-relaxed">
               Empowering content creators to reach their full potential through premium partnerships and a structure no one else has.
