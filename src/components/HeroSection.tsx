@@ -158,13 +158,13 @@ const HeroSection = () => {
           >
             <motion.h1
               variants={slideInLeft}
-              className="text-foreground font-display font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-none tracking-tight"
+              className="text-white md:text-foreground font-display font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-none tracking-tight"
             >
               MORE MONEY
             </motion.h1>
             <motion.h1
               variants={slideInLeft}
-              className="text-foreground font-display font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-none tracking-tight"
+              className="text-white md:text-foreground font-display font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-none tracking-tight"
             >
               MORE STRUCTURE
             </motion.h1>
@@ -187,7 +187,7 @@ const HeroSection = () => {
           {/* Subheadline */}
           <motion.p
             variants={itemVariants}
-            className="text-muted-foreground font-body text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed mb-8 sm:mb-10 max-w-lg text-left"
+            className="text-white md:text-muted-foreground font-body text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed mb-8 sm:mb-10 max-w-lg text-left"
           >
             Exclusive talent management for ambitious creators ready to scale their income, reclaim their time, and build a true lifestyle.
             Join the top 1% earning 6–7 figures.
@@ -216,10 +216,10 @@ const HeroSection = () => {
         </div>
       </motion.div>
       
-      {/* Mobile hero video */}
+      {/* Mobile hero video background */}
       <motion.div
         variants={slideInRight}
-        className="md:hidden absolute bottom-0 left-0 right-0 h-1/3 opacity-50"
+        className="md:hidden absolute inset-0 z-0"
       >
         <video
           autoPlay
@@ -230,7 +230,8 @@ const HeroSection = () => {
         >
           <source src="/woman.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+        <div className="absolute inset-0 bg-black/30" />
       </motion.div>
       
     </motion.section>
