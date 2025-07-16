@@ -107,7 +107,7 @@ const FeaturesSection = () => {
           </motion.div>
           <motion.h2
             variants={itemVariants}
-            className="font-display font-black text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.9] text-foreground mb-8 relative px-4"
+            className="font-display font-black text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[0.9] text-foreground mb-8 relative px-4"
           >
             <span className="text-primary block xs:inline">EVERYTHING</span>{' '}
             <span className="text-foreground block xs:inline">YOU NEED</span>
