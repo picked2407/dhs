@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { LogOut, Users, Mail, Calendar, Globe, TrendingUp, Eye, Star } from "lucide-react";
+import { LogOut, Users, Mail, Calendar, Globe, TrendingUp, Eye, Star, DollarSign, Activity, UserCheck, Search, Filter } from "lucide-react";
 
 // Demo credentials
 const ADMIN_EMAIL = "hello@fanslink.app";
@@ -89,6 +89,8 @@ const Admin = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loginData, setLoginData] = useState({ email: "", password: "" });
   const [loginError, setLoginError] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [statusFilter, setStatusFilter] = useState("all");
 
   // Check if already logged in
   useEffect(() => {
@@ -123,6 +125,28 @@ const Admin = () => {
       minute: "2-digit"
     });
   };
+
+  // Filter submissions based on search term and status
+  const filteredSubmissions = mockSubmissions.filter(submission => {
+    const matchesSearch = searchTerm === "" || 
+      submission.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      submission.lastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      submission.workEmail.toLowerCase().includes(searchTerm.toLowerCase());
+    
+    const matchesStatus = statusFilter === "all" || submission.status === statusFilter;
+    
+    return matchesSearch && matchesStatus;
+  });
+
+  // Calculate statistics
+  const totalRevenue = mockSubmissions.reduce((sum, submission) => {
+    return sum + parseInt(submission.revenue.replace(/[$,]/g, ''));
+  }, 0);
+
+  const statusCounts = mockSubmissions.reduce((counts, submission) => {
+    counts[submission.status] = (counts[submission.status] || 0) + 1;
+    return counts;
+  }, {} as Record<string, number>);
 
   // Login Page
   if (!isAuthenticated) {
@@ -232,96 +256,235 @@ const Admin = () => {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Welcome Message matching landing page */}
-        <div className="mb-12 text-center">
-          <h2 className="text-5xl sm:text-6xl font-display font-black text-foreground mb-6 leading-tight">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Welcome Message */}
+        <div className="mb-8 text-center">
+          <h2 className="text-4xl sm:text-5xl font-display font-black text-foreground mb-4 leading-tight">
             CREATOR
             <span className="block bg-gradient-hero bg-clip-text text-transparent">
-              INSIGHTS
+              DASHBOARD
             </span>
           </h2>
-          <p className="text-muted-foreground font-body text-xl max-w-3xl mx-auto leading-relaxed">
-            Monitor your luxury talent portfolio and track millionaire-making progress with elite precision
+          <p className="text-muted-foreground font-body text-lg max-w-2xl mx-auto leading-relaxed">
+            Monitor your luxury talent portfolio and track millionaire-making progress
           </p>
         </div>
 
-        {/* Enhanced Submissions Table - Black, White, Purple only */}
+        {/* Statistics Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <Card className="border-0 shadow-luxury bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <CardContent className="p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-body text-muted-foreground uppercase tracking-wider mb-2">Total Applications</p>
+                  <p className="text-3xl font-display font-black text-foreground">{mockSubmissions.length}</p>
+                </div>
+                <div className="w-12 h-12 bg-gradient-hero rounded-luxury flex items-center justify-center shadow-glow">
+                  <Users className="h-6 w-6 text-white" />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-0 shadow-luxury bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <CardContent className="p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-body text-muted-foreground uppercase tracking-wider mb-2">Total Revenue</p>
+                  <p className="text-3xl font-display font-black text-primary">${(totalRevenue / 1000).toFixed(0)}K</p>
+                </div>
+                <div className="w-12 h-12 bg-gradient-hero rounded-luxury flex items-center justify-center shadow-glow">
+                  <DollarSign className="h-6 w-6 text-white" />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-0 shadow-luxury bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <CardContent className="p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-body text-muted-foreground uppercase tracking-wider mb-2">Qualified</p>
+                  <p className="text-3xl font-display font-black text-foreground">{statusCounts.qualified || 0}</p>
+                </div>
+                <div className="w-12 h-12 bg-gradient-hero rounded-luxury flex items-center justify-center shadow-glow">
+                  <UserCheck className="h-6 w-6 text-white" />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-0 shadow-luxury bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <CardContent className="p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-body text-muted-foreground uppercase tracking-wider mb-2">Conversion Rate</p>
+                  <p className="text-3xl font-display font-black text-primary">{Math.round(((statusCounts.qualified || 0) / mockSubmissions.length) * 100)}%</p>
+                </div>
+                <div className="w-12 h-12 bg-gradient-hero rounded-luxury flex items-center justify-center shadow-glow">
+                  <TrendingUp className="h-6 w-6 text-white" />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Applications Table */}
         <Card className="border-0 shadow-luxury bg-white">
-          <CardHeader className="bg-gradient-to-r from-primary/5 to-primary-glow/5 border-b border-primary/10 p-8">
-            <div className="flex items-center justify-between">
+          <CardHeader className="bg-gradient-to-r from-primary/5 to-primary-glow/5 border-b border-primary/10 p-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div>
-                <CardTitle className="text-3xl font-display font-black text-foreground mb-2">
+                <CardTitle className="text-2xl font-display font-black text-foreground mb-2">
                   CREATOR APPLICATIONS
                 </CardTitle>
-                <CardDescription className="text-muted-foreground font-body text-lg">
-                  Manage and track your luxury talent pipeline with elite precision
+                <CardDescription className="text-muted-foreground font-body">
+                  Manage your luxury talent pipeline with elite precision
                 </CardDescription>
               </div>
-              <div className="flex items-center space-x-3">
-                <Badge className="bg-gradient-hero text-white px-4 py-2 font-display font-bold tracking-wider">
-                  {mockSubmissions.length} TOTAL
-                </Badge>
-                <Eye className="h-6 w-6 text-muted-foreground" />
+              
+              {/* Search and Filter */}
+              <div className="flex flex-col sm:flex-row gap-3">
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <Input
+                    placeholder="Search creators..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="pl-10 w-full sm:w-64 h-10 rounded-luxury border-input focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                  />
+                </div>
+                
+                <div className="relative">
+                  <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <select
+                    value={statusFilter}
+                    onChange={(e) => setStatusFilter(e.target.value)}
+                    className="pl-10 pr-8 py-2 w-full sm:w-40 h-10 rounded-luxury border border-input bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 appearance-none"
+                  >
+                    <option value="all">All Status</option>
+                    <option value="new">New</option>
+                    <option value="contacted">Contacted</option>
+                    <option value="qualified">Qualified</option>
+                  </select>
+                </div>
               </div>
             </div>
           </CardHeader>
+          
           <CardContent className="p-0">
             <div className="overflow-x-auto">
               <Table>
                 <TableHeader>
                   <TableRow className="bg-muted/20 hover:bg-muted/40 border-b border-border">
-                    <TableHead className="font-display font-black text-foreground uppercase tracking-wider p-6">Creator Name</TableHead>
-                    <TableHead className="font-display font-black text-foreground uppercase tracking-wider p-6">Contact</TableHead>
-                    <TableHead className="font-display font-black text-foreground uppercase tracking-wider p-6">Location</TableHead>
-                    <TableHead className="font-display font-black text-foreground uppercase tracking-wider p-6">Revenue Potential</TableHead>
-                    <TableHead className="font-display font-black text-foreground uppercase tracking-wider p-6">Status</TableHead>
-                    <TableHead className="font-display font-black text-foreground uppercase tracking-wider p-6">Applied</TableHead>
+                    <TableHead className="font-display font-black text-foreground uppercase tracking-wider p-4">Creator</TableHead>
+                    <TableHead className="font-display font-black text-foreground uppercase tracking-wider p-4">Contact</TableHead>
+                    <TableHead className="font-display font-black text-foreground uppercase tracking-wider p-4">Location</TableHead>
+                    <TableHead className="font-display font-black text-foreground uppercase tracking-wider p-4">Revenue</TableHead>
+                    <TableHead className="font-display font-black text-foreground uppercase tracking-wider p-4">Status</TableHead>
+                    <TableHead className="font-display font-black text-foreground uppercase tracking-wider p-4">Applied</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {mockSubmissions.map((submission, index) => (
-                    <TableRow 
-                      key={submission.id} 
-                      className="hover:bg-primary/5 transition-colors border-b border-border/30"
-                    >
-                      <TableCell className="font-medium py-6 px-6">
-                        <div className="flex items-center space-x-4">
-                          <div className="w-12 h-12 bg-gradient-hero rounded-luxury flex items-center justify-center text-white font-display font-bold text-sm shadow-luxury">
-                            {submission.firstName[0]}{submission.lastName[0]}
+                  {filteredSubmissions.length === 0 ? (
+                    <TableRow>
+                      <TableCell colSpan={6} className="text-center py-12">
+                        <div className="flex flex-col items-center space-y-4">
+                          <div className="w-16 h-16 bg-muted/20 rounded-luxury flex items-center justify-center">
+                            <Users className="h-8 w-8 text-muted-foreground" />
                           </div>
                           <div>
-                            <p className="font-display font-bold text-foreground text-lg">
-                              {submission.firstName} {submission.lastName}
-                            </p>
-                            <p className="text-sm text-muted-foreground font-body uppercase tracking-wider">Creator #{submission.id}</p>
+                            <p className="font-display font-bold text-muted-foreground text-lg mb-2">No applications found</p>
+                            <p className="text-sm text-muted-foreground">Try adjusting your search or filter criteria</p>
                           </div>
                         </div>
                       </TableCell>
-                      <TableCell className="py-6 px-6">
-                        <p className="font-body text-foreground">{submission.workEmail}</p>
-                      </TableCell>
-                      <TableCell className="py-6 px-6">
-                        <p className="font-body text-foreground">{countryNames[submission.country] || submission.country}</p>
-                      </TableCell>
-                      <TableCell className="py-6 px-6">
-                        <p className="font-display font-black text-xl text-primary">{submission.revenue}</p>
-                      </TableCell>
-                      <TableCell className="py-6 px-6">
-                        <Badge className={`${statusColors[submission.status]} border font-display font-bold uppercase tracking-wider`}>
-                          {submission.status.charAt(0).toUpperCase() + submission.status.slice(1)}
-                        </Badge>
-                      </TableCell>
-                      <TableCell className="text-muted-foreground py-6 px-6 font-body">
-                        {formatDate(submission.submittedAt)}
-                      </TableCell>
                     </TableRow>
-                  ))}
+                  ) : (
+                    filteredSubmissions.map((submission) => (
+                      <TableRow 
+                        key={submission.id} 
+                        className="hover:bg-primary/5 transition-colors border-b border-border/30"
+                      >
+                        <TableCell className="font-medium py-4 px-4">
+                          <div className="flex items-center space-x-3">
+                            <div className="w-10 h-10 bg-gradient-hero rounded-luxury flex items-center justify-center text-white font-display font-bold text-xs shadow-luxury">
+                              {submission.firstName[0]}{submission.lastName[0]}
+                            </div>
+                            <div>
+                              <p className="font-display font-bold text-foreground">
+                                {submission.firstName} {submission.lastName}
+                              </p>
+                              <p className="text-xs text-muted-foreground font-body uppercase tracking-wider">ID #{submission.id}</p>
+                            </div>
+                          </div>
+                        </TableCell>
+                        <TableCell className="py-4 px-4">
+                          <p className="font-body text-foreground text-sm">{submission.workEmail}</p>
+                        </TableCell>
+                        <TableCell className="py-4 px-4">
+                          <p className="font-body text-foreground text-sm">{countryNames[submission.country] || submission.country}</p>
+                        </TableCell>
+                        <TableCell className="py-4 px-4">
+                          <p className="font-display font-black text-lg text-primary">{submission.revenue}</p>
+                        </TableCell>
+                        <TableCell className="py-4 px-4">
+                          <Badge className={`${statusColors[submission.status]} border font-display font-bold uppercase tracking-wider text-xs`}>
+                            {submission.status.charAt(0).toUpperCase() + submission.status.slice(1)}
+                          </Badge>
+                        </TableCell>
+                        <TableCell className="text-muted-foreground py-4 px-4 font-body text-sm">
+                          {formatDate(submission.submittedAt)}
+                        </TableCell>
+                      </TableRow>
+                    ))
+                  )}
                 </TableBody>
               </Table>
             </div>
           </CardContent>
         </Card>
+
+        {/* Quick Actions */}
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <Card className="border-0 shadow-luxury bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <CardContent className="p-6 text-center">
+              <div className="w-12 h-12 bg-gradient-hero rounded-luxury flex items-center justify-center mx-auto mb-4 shadow-glow">
+                <Activity className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="font-display font-black text-foreground mb-2">Performance Analytics</h3>
+              <p className="text-sm text-muted-foreground font-body mb-4">Track creator success metrics and revenue growth</p>
+              <Button className="w-full bg-gradient-hero hover:shadow-glow transition-all duration-300 font-display font-bold uppercase tracking-wider">
+                View Analytics
+              </Button>
+            </CardContent>
+          </Card>
+
+          <Card className="border-0 shadow-luxury bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <CardContent className="p-6 text-center">
+              <div className="w-12 h-12 bg-gradient-hero rounded-luxury flex items-center justify-center mx-auto mb-4 shadow-glow">
+                <Mail className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="font-display font-black text-foreground mb-2">Contact Management</h3>
+              <p className="text-sm text-muted-foreground font-body mb-4">Manage creator communications and outreach</p>
+              <Button className="w-full bg-gradient-hero hover:shadow-glow transition-all duration-300 font-display font-bold uppercase tracking-wider">
+                Manage Contacts
+              </Button>
+            </CardContent>
+          </Card>
+
+          <Card className="border-0 shadow-luxury bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <CardContent className="p-6 text-center">
+              <div className="w-12 h-12 bg-gradient-hero rounded-luxury flex items-center justify-center mx-auto mb-4 shadow-glow">
+                <TrendingUp className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="font-display font-black text-foreground mb-2">Revenue Tracking</h3>
+              <p className="text-sm text-muted-foreground font-body mb-4">Monitor and optimize creator revenue streams</p>
+              <Button className="w-full bg-gradient-hero hover:shadow-glow transition-all duration-300 font-display font-bold uppercase tracking-wider">
+                Track Revenue
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
       </main>
     </div>
   );
