@@ -2,13 +2,12 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import exclusiveBenefitsBg from "@/assets/exclusive-benefits-bg.jpg";
-import vipEvents from "@/assets/vip-events.jpg";
-import personalShopping from "@/assets/personal-shopping.jpg";
-import businessClass from "@/assets/business-class.jpg";
-import luxuryYacht from "@/assets/luxury-yacht.jpg";
-import villaRental from "@/assets/villa-rental.jpg";
-import privateJet from "@/assets/private-jet.jpg";
-import luxuryCar from "@/assets/luxury-car.jpg";
+import accountingGuidance from "@/assets/accounting-guidance.jpg";
+import bankingAssistance from "@/assets/banking-assistance.jpg";
+import businessVentures from "@/assets/business-ventures.jpg";
+import productLine from "@/assets/product-line.jpg";
+import legalSupport from "@/assets/legal-support.jpg";
+import discountedFlights from "@/assets/discounted-flights.jpg";
 
 const ExclusiveBenefitsSection = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -77,14 +76,13 @@ const ExclusiveBenefitsSection = () => {
     }
   ];
 
-  const luxuryExperiences = [
-    { image: vipEvents, title: "VIP EVENTS" },
-    { image: personalShopping, title: "PERSONAL SHOPPING" },
-    { image: businessClass, title: "BUSINESS CLASS FLIGHTS" },
-    { image: luxuryYacht, title: "LUXURY YACHTS" },
-    { image: villaRental, title: "VILLA RENTAL" },
-    { image: privateJet, title: "PRIVATE JET CHARTER" },
-    { image: luxuryCar, title: "LUXURY CAR RENTAL" }
+  const businessServices = [
+    { image: accountingGuidance, title: "ACCOUNTING GUIDANCE" },
+    { image: bankingAssistance, title: "BANKING ASSISTANCE" },
+    { image: businessVentures, title: "BUSINESS VENTURES SETUP" },
+    { image: productLine, title: "PRODUCT LINE DEVELOPMENT" },
+    { image: legalSupport, title: "LEGAL SUPPORT" },
+    { image: discountedFlights, title: "DISCOUNTED FLIGHTS ACCESS" }
   ];
 
   // Auto-scroll functionality
@@ -182,13 +180,13 @@ const ExclusiveBenefitsSection = () => {
           </h3>
         </motion.div>
 
-        {/* Luxury Experiences Carousel */}
+        {/* Business Services Carousel */}
         <motion.div 
           variants={slideInUp}
           ref={scrollRef} 
           className="flex gap-6 overflow-x-auto pb-8 mb-12 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
-          {luxuryExperiences.map((experience, index) => (
+          {businessServices.map((service, index) => (
             <motion.div 
               key={index}
               initial={{ opacity: 0, scale: 0.8 }}
@@ -199,14 +197,14 @@ const ExclusiveBenefitsSection = () => {
             >
               <div className="w-64 h-64 rounded-luxury overflow-hidden relative group">
                 <img 
-                  src={experience.image} 
-                  alt={experience.title}
+                  src={service.image} 
+                  alt={service.title}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
                   <h4 className="font-display font-bold text-white text-lg uppercase tracking-wide drop-shadow-lg">
-                    {experience.title}
+                    {service.title}
                   </h4>
                 </div>
               </div>
