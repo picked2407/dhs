@@ -2,26 +2,28 @@ import { Button } from "@/components/ui/button";
 
 const MinimalFooter = () => {
   return (
-    <footer className="bg-primary text-background py-12">
+    <footer className="py-12" style={{ backgroundColor: '#171717' }}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
           {/* Logo and Description */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center">
-                <span className="text-primary font-bold text-lg">F</span>
-              </div>
-              <h3 className="font-display text-xl font-bold text-background">fanslink</h3>
+            <div className="flex items-center space-x-3">
+              <img 
+                src="/lovable-uploads/3ad67c27-4fe0-45d4-ba24-4f5d3c346df6.png" 
+                alt="Fanslink Logo" 
+                className="w-10 h-10"
+              />
+              <h3 className="font-display text-xl font-bold text-white">fanslink</h3>
             </div>
-            <p className="font-body text-background/80 text-sm leading-relaxed">
+            <p className="font-body text-white/80 text-sm leading-relaxed">
               Empowering content creators to reach their full potential through premium partnerships and a structure no one else has.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-display font-bold text-lg mb-4">Quick Links</h4>
-            <ul className="space-y-2 font-body text-background/80">
+            <h4 className="font-display font-bold text-lg mb-4 text-white">Quick Links</h4>
+            <ul className="space-y-2 font-body text-white/80">
               <li><a href="/#about" className="hover:text-accent transition-colors">About Us</a></li>
               <li><a href="/#services" className="hover:text-accent transition-colors">Services</a></li>
               <li><a href="/apply" className="hover:text-accent transition-colors">Apply Now</a></li>
@@ -31,9 +33,9 @@ const MinimalFooter = () => {
 
           {/* Ready to Join */}
           <div>
-            <h4 className="font-display font-bold text-lg mb-4">Ready to Join?</h4>
+            <h4 className="font-display font-bold text-lg mb-4 text-white">Ready to Join?</h4>
             <div className="space-y-3">
-              <p className="font-body text-background/80 text-sm leading-relaxed">
+              <p className="font-body text-white/80 text-sm leading-relaxed">
                 Take the first step towards financial freedom and luxury lifestyle.
               </p>
               <Button 
@@ -49,12 +51,12 @@ const MinimalFooter = () => {
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 pt-8 border-t border-background/20">
+        <div className="mt-8 pt-8 border-t border-white/20">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
-            <p className="font-body text-background/60 text-sm">
+            <p className="font-body text-white/60 text-sm">
               © 2025 FansLink. All rights reserved.
             </p>
-            <div className="flex space-x-4 font-body text-background/60 text-sm">
+            <div className="flex space-x-4 font-body text-white/60 text-sm">
               <a href="#" className="hover:text-accent transition-colors">Privacy Policy</a>
               <span>|</span>
               <a href="#" className="hover:text-accent transition-colors">Terms of Service</a>
