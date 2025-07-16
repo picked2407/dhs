@@ -42,9 +42,12 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center">
             <img 
-              src="/lovable-uploads/a2e9426f-c0b6-4dd2-92d3-0fee2d2d9acf.png"
+              src={isScrolled 
+                ? "/lovable-uploads/a2e9426f-c0b6-4dd2-92d3-0fee2d2d9acf.png" 
+                : "/lovable-uploads/16fa52cf-edc8-4a2a-9dd6-eaf58bf7c5d3.png"
+              }
               alt="FansLink Logo" 
-              className="h-12 w-auto transition-all duration-300"
+              className="h-12 w-auto transition-all duration-300 md:!content-[url('/lovable-uploads/a2e9426f-c0b6-4dd2-92d3-0fee2d2d9acf.png')]"
             />
           </div>
 
@@ -83,7 +86,11 @@ const Navigation = () => {
                 <Button 
                   variant="ghost" 
                   size="icon"
-                  className="transition-colors text-foreground hover:text-foreground"
+                  className={`transition-colors ${
+                    isScrolled 
+                      ? "text-foreground hover:text-foreground" 
+                      : "text-white hover:text-white"
+                  }`}
                 >
                   <Menu className="h-6 w-6" />
                 </Button>
