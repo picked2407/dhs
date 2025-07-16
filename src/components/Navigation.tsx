@@ -8,6 +8,15 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
@@ -41,32 +50,48 @@ const Navigation = () => {
 
           {/* Desktop Navigation Menu */}
           <div className="hidden md:flex items-center space-x-8 ml-8">
-            <a href="#earn" className={`font-body font-medium uppercase tracking-wider text-sm transition-colors ${
-              isScrolled 
-                ? "text-foreground/80 hover:text-foreground" 
-                : "text-black/80 hover:text-black"
-            }`}>
+            <a 
+              href="#earn" 
+              onClick={(e) => handleSmoothScroll(e, 'earn')}
+              className={`font-body font-medium uppercase tracking-wider text-sm transition-colors ${
+                isScrolled 
+                  ? "text-foreground/80 hover:text-foreground" 
+                  : "text-black/80 hover:text-black"
+              }`}
+            >
               Earn More
             </a>
-            <a href="#team" className={`font-body font-medium uppercase tracking-wider text-sm transition-colors ${
-              isScrolled 
-                ? "text-foreground/80 hover:text-foreground" 
-                : "text-black/80 hover:text-black"
-            }`}>
+            <a 
+              href="#team" 
+              onClick={(e) => handleSmoothScroll(e, 'team')}
+              className={`font-body font-medium uppercase tracking-wider text-sm transition-colors ${
+                isScrolled 
+                  ? "text-foreground/80 hover:text-foreground" 
+                  : "text-black/80 hover:text-black"
+              }`}
+            >
               Our Team
             </a>
-            <a href="#services" className={`font-body font-medium uppercase tracking-wider text-sm transition-colors ${
-              isScrolled 
-                ? "text-foreground/80 hover:text-foreground" 
-                : "text-black/80 hover:text-black"
-            }`}>
+            <a 
+              href="#services" 
+              onClick={(e) => handleSmoothScroll(e, 'services')}
+              className={`font-body font-medium uppercase tracking-wider text-sm transition-colors ${
+                isScrolled 
+                  ? "text-foreground/80 hover:text-foreground" 
+                  : "text-black/80 hover:text-black"
+              }`}
+            >
               Services
             </a>
-            <a href="#price" className={`font-body font-medium uppercase tracking-wider text-sm transition-colors ${
-              isScrolled 
-                ? "text-foreground/80 hover:text-foreground" 
-                : "text-black/80 hover:text-black"
-            }`}>
+            <a 
+              href="#price" 
+              onClick={(e) => handleSmoothScroll(e, 'price')}
+              className={`font-body font-medium uppercase tracking-wider text-sm transition-colors ${
+                isScrolled 
+                  ? "text-foreground/80 hover:text-foreground" 
+                  : "text-black/80 hover:text-black"
+              }`}
+            >
               Price
             </a>
             <Button variant="default" size="sm" className="h-8 px-4 bg-primary hover:bg-primary/90" asChild>
@@ -94,29 +119,29 @@ const Navigation = () => {
                 <div className="flex flex-col space-y-6 mt-8">
                   <a 
                     href="#earn" 
+                    onClick={(e) => handleSmoothScroll(e, 'earn')}
                     className="font-body font-medium uppercase tracking-wider text-lg text-foreground hover:text-primary transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Earn More
                   </a>
                   <a 
                     href="#team" 
+                    onClick={(e) => handleSmoothScroll(e, 'team')}
                     className="font-body font-medium uppercase tracking-wider text-lg text-foreground hover:text-primary transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Our Team
                   </a>
                   <a 
                     href="#services" 
+                    onClick={(e) => handleSmoothScroll(e, 'services')}
                     className="font-body font-medium uppercase tracking-wider text-lg text-foreground hover:text-primary transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Services
                   </a>
                   <a 
                     href="#price" 
+                    onClick={(e) => handleSmoothScroll(e, 'price')}
                     className="font-body font-medium uppercase tracking-wider text-lg text-foreground hover:text-primary transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Price
                   </a>

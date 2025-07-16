@@ -46,7 +46,7 @@ const PromiseSection = () => {
       }
     }
   };
-  return <motion.section ref={ref} initial="hidden" animate={isInView ? "visible" : "hidden"} variants={containerVariants} className="relative h-screen min-h-[800px] flex items-center justify-center overflow-hidden">
+  return <motion.section id="price" ref={ref} initial="hidden" animate={isInView ? "visible" : "hidden"} variants={containerVariants} className="relative h-screen min-h-[800px] flex items-center justify-center overflow-hidden scroll-mt-16">
       {/* Background Image with Blur */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110 blur-sm" style={{
       backgroundImage: `url(${promiseLuxury})`

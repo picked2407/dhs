@@ -64,11 +64,12 @@ const FoundersSection = () => {
 
   return (
     <motion.section
+      id="team"
       ref={ref}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
-      className="py-24 bg-background relative overflow-hidden"
+      className="py-24 bg-background relative overflow-hidden scroll-mt-16"
     >
       {/* Animated background elements */}
       <motion.div

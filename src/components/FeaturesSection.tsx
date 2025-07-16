@@ -90,11 +90,12 @@ const FeaturesSection = () => {
 
   return (
     <motion.section
+      id="services"
       ref={ref}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
-      className="py-24 bg-background relative overflow-hidden"
+      className="py-24 bg-background relative overflow-hidden scroll-mt-16"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
