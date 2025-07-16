@@ -138,7 +138,7 @@ const ExclusiveBenefitsSection = () => {
         {/* Header */}
         <motion.div variants={containerVariants} className="text-center mb-16">
           <motion.div variants={itemVariants} className="uppercase tracking-[0.2em] text-primary font-display font-bold text-sm mb-8">
-            How Much Does It Cost?
+            WHAT ELSE DO WE OFFER?
           </motion.div>
           
           <motion.h2 variants={itemVariants} className="font-display font-black text-5xl sm:text-6xl lg:text-7xl leading-tight text-white mb-8">
