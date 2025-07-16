@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import heroImage from "/lovable-uploads/a8cc42a1-7313-42ba-a835-b19d2dad70ee.png";
 
 const HeroSection = () => {
   const containerVariants = {
@@ -120,13 +119,18 @@ const HeroSection = () => {
         className="absolute right-0 top-0 w-1/2 h-full hidden md:block"
       >
         <div className="relative h-full">
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${heroImage})` }}
-          />
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/woman.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent via-70% to-background" />
           
-          {/* Floating elements over the image */}
+          {/* Floating elements over the video */}
         </div>
       </motion.div>
 
@@ -212,15 +216,20 @@ const HeroSection = () => {
         </div>
       </motion.div>
       
-      {/* Mobile hero image */}
+      {/* Mobile hero video */}
       <motion.div
         variants={slideInRight}
         className="md:hidden absolute bottom-0 left-0 right-0 h-2/5 opacity-60"
       >
-        <div 
-          className="w-full h-full bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/woman.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-background/20 to-transparent" />
       </motion.div>
       
