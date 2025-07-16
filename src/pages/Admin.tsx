@@ -490,22 +490,17 @@ const Admin = () => {
                                 <MoreHorizontal className="h-4 w-4" />
                               </Button>
                             </DropdownMenuTrigger>
-                            <DropdownMenuContent align="end" className="w-48">
-                              <DropdownMenuLabel className="font-display font-bold">Actions</DropdownMenuLabel>
-                              <DropdownMenuItem className="flex items-center gap-2 font-body">
-                                <Eye className="h-4 w-4" />
-                                View Details
-                              </DropdownMenuItem>
-                              <DropdownMenuSeparator />
-                              <DropdownMenuItem className="flex items-center gap-2 font-body">
-                                <CheckCircle className="h-4 w-4" />
-                                Approve
-                              </DropdownMenuItem>
-                              <DropdownMenuItem className="flex items-center gap-2 font-body">
-                                <XCircle className="h-4 w-4" />
-                                Reject
-                              </DropdownMenuItem>
-                            </DropdownMenuContent>
+                             <DropdownMenuContent align="end" className="w-48">
+                               <DropdownMenuLabel className="font-display font-bold">Actions</DropdownMenuLabel>
+                               <DropdownMenuItem className="flex items-center gap-2 font-body">
+                                 <CheckCircle className="h-4 w-4" />
+                                 Approve
+                               </DropdownMenuItem>
+                               <DropdownMenuItem className="flex items-center gap-2 font-body">
+                                 <XCircle className="h-4 w-4" />
+                                 Reject
+                               </DropdownMenuItem>
+                             </DropdownMenuContent>
                           </DropdownMenu>
                         </TableCell>
                       </TableRow>
