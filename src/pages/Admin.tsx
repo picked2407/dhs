@@ -23,7 +23,9 @@ import {
   CheckCircle,
   XCircle,
   AlertCircle,
-  MoreHorizontal
+  MoreHorizontal,
+  Instagram,
+  ExternalLink
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -417,14 +419,23 @@ const Admin = () => {
                   ) : (
                     filteredApplications.map((app) => (
                       <TableRow key={app.id} className="hover:bg-muted/20 transition-all duration-200">
-                        <TableCell className="p-4">
-                          <div className="space-y-1">
-                            <div className="font-display font-bold text-foreground">{app.full_name}</div>
-                            <div className="text-sm text-muted-foreground font-body">
-                              {app.instagram_handle}
-                            </div>
-                          </div>
-                        </TableCell>
+                         <TableCell className="p-4">
+                           <div className="space-y-1">
+                             <div className="font-display font-bold text-foreground">{app.full_name}</div>
+                             <div className="flex items-center gap-2 text-sm text-muted-foreground font-body">
+                               <span>@{app.instagram_handle}</span>
+                               <a
+                                 href={`https://www.instagram.com/${app.instagram_handle}`}
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 className="flex items-center gap-1 text-pink-500 hover:text-pink-600 transition-colors"
+                               >
+                                 <Instagram className="h-4 w-4" />
+                                 <ExternalLink className="h-3 w-3" />
+                               </a>
+                             </div>
+                           </div>
+                         </TableCell>
                         <TableCell className="p-4">
                           <div className="space-y-1">
                             <div className="flex items-center gap-2 text-sm font-body">
