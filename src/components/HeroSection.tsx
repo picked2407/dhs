@@ -220,7 +220,7 @@ const HeroSection = () => {
       {/* Mobile hero video with dark overlay */}
       <motion.div
         variants={slideInRight}
-        className="md:hidden absolute inset-0 -z-10"
+        className="md:hidden absolute inset-0 z-0"
       >
         <video
           autoPlay
@@ -232,9 +232,9 @@ const HeroSection = () => {
           <source src="/woman.mp4" type="video/mp4" />
         </video>
         {/* Dark overlay for better text visibility */}
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/40" />
         {/* Gradient overlay to merge with background */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-background/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/30 to-background/10" />
       </motion.div>
       
     </motion.section>
