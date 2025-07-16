@@ -83,15 +83,15 @@ const PromiseSection = () => {
             transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
             className="bg-gradient-to-r from-primary via-primary to-primary-glow bg-[length:200%_100%] bg-clip-text text-transparent animate-pulse"
           >
-            TRIPLE
+            FIX
           </motion.span>{' '}
-          YOUR<br />
-          INCOME IN 90 DAYS<br />
+          YOUR SYSTEMS<br />
+          IN 90 DAYS<br />
           <motion.span
             variants={itemVariants}
             className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl"
           >
-            — OR WE WORK FOR FREE
+            — OR WE'LL WORK FOR FREE
           </motion.span>
         </motion.h1>
         
