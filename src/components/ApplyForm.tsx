@@ -84,6 +84,12 @@ export function ApplyForm() {
         title: "Application Submitted!",
         description: "We'll review your application and get back to you within 24 hours.",
       });
+      
+      // Redirect to WhatsApp after successful submission
+      setTimeout(() => {
+        window.location.href = "https://wa.me/447564839663";
+      }, 1500);
+      
       form.reset();
       setCurrentSection(1);
     } catch (error) {
