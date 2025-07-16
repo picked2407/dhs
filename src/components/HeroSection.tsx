@@ -207,7 +207,7 @@ const HeroSection = () => {
               >
                 <a href="https://wa.me/447564839663" target="_blank" rel="noopener noreferrer">
                   <span className="hidden sm:inline">Send Us A Message</span>
-                  <span className="sm:hidden">Contact Us</span>
+                  <span className="sm:hidden">APPLY NOW</span>
                   <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </a>
               </Button>
