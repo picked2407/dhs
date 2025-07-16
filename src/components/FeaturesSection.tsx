@@ -75,16 +75,16 @@ const FeaturesSection = () => {
 
   const benefits = [
     {
-      title: "No More Burnout or Overwhelm",
-      description: "We handle the hard work, so you get to do what you love."
+      title: "Burnout Stops Growth",
+      description: "Without proper systems, burnout is guaranteed. We handle the hard work so you can stay focused and consistent."
     },
     {
-      title: "No Explicit Content Required",
-      description: "Your body, your rules. Boundaries always respected."
+      title: "You Set the Boundaries",
+      description: "You don't need to post explicit content to succeed. We respect your limits and build your brand around them."
     },
     {
-      title: "No Risky Hacks or Shady Tactics",
-      description: "We use ethical, proven strategies for sustainable growth."
+      title: "No underground schemes. Just Proven Strategy.",
+      description: "Quick hacks don't last. We use strategies that actually work and keep working long-term."
     }
   ];
 
@@ -161,7 +161,7 @@ const FeaturesSection = () => {
             >
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start space-x-4">
-                  <div className="w-7 h-7 bg-purple-soft rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-7 h-7 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <X className="w-4 h-4 text-white" />
                   </div>
                   <div>
