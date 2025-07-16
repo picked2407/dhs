@@ -61,19 +61,19 @@ const ExclusiveBenefitsSection = () => {
 
   const benefits = [
     {
-      icon: "💲",
-      title: "No Upfront Cost",
-      description: "You pay absolutely nothing to get started with our partnership."
+      icon: "💵",
+      title: "Pay Nothing Upfront",
+      description: "We only earn when you do. No fees, no fluff, just a performance based partnership built on results."
     },
     {
       icon: "📈",
-      title: "We Grow Together", 
-      description: "Our success is directly tied to yours, ensuring shared goals and effort."
+      title: "Your Growth = Our Growth", 
+      description: "We don't win unless you do. Our incentives are aligned, our systems are proven, and we're in this with you."
     },
     {
-      icon: "💰",
-      title: "We Invest In You",
-      description: "We reinvest a portion of our earnings back into promoting your brand."
+      icon: "🚀",
+      title: "We Reinvest in Your Brand",
+      description: "We put our own skin in the game, reinvesting a portion of our earnings into scaling your success."
     }
   ];
 
