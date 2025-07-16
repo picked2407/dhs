@@ -42,10 +42,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center">
             <img 
-              src={isScrolled 
-                ? "/lovable-uploads/a2e9426f-c0b6-4dd2-92d3-0fee2d2d9acf.png" 
-                : "/lovable-uploads/7614be81-f6cf-4b45-9c77-f5ba71d8c9ff.png"
-              }
+              src="/lovable-uploads/a2e9426f-c0b6-4dd2-92d3-0fee2d2d9acf.png"
               alt="FansLink Logo" 
               className="h-12 w-auto transition-all duration-300"
             />
@@ -56,33 +53,21 @@ const Navigation = () => {
             <a 
               href="#earn" 
               onClick={(e) => handleSmoothScroll(e, 'earn')}
-              className={`font-body font-medium uppercase tracking-wider text-sm transition-colors ${
-                isScrolled 
-                  ? "text-foreground/80 hover:text-foreground" 
-                  : "text-white/80 hover:text-white"
-              }`}
+              className="font-body font-medium uppercase tracking-wider text-sm transition-colors text-foreground/80 hover:text-foreground"
             >
               Earn More
             </a>
             <a 
               href="#services" 
               onClick={(e) => handleSmoothScroll(e, 'services')}
-              className={`font-body font-medium uppercase tracking-wider text-sm transition-colors ${
-                isScrolled 
-                  ? "text-foreground/80 hover:text-foreground" 
-                  : "text-white/80 hover:text-white"
-              }`}
+              className="font-body font-medium uppercase tracking-wider text-sm transition-colors text-foreground/80 hover:text-foreground"
             >
               Services
             </a>
             <a 
               href="#team" 
               onClick={(e) => handleSmoothScroll(e, 'team')}
-              className={`font-body font-medium uppercase tracking-wider text-sm transition-colors ${
-                isScrolled 
-                  ? "text-foreground/80 hover:text-foreground" 
-                  : "text-white/80 hover:text-white"
-              }`}
+              className="font-body font-medium uppercase tracking-wider text-sm transition-colors text-foreground/80 hover:text-foreground"
             >
               Our Team
             </a>
@@ -98,11 +83,7 @@ const Navigation = () => {
                 <Button 
                   variant="ghost" 
                   size="icon"
-                  className={`transition-colors ${
-                    isScrolled 
-                      ? "text-foreground hover:text-foreground" 
-                      : "text-white hover:text-white"
-                  }`}
+                  className="transition-colors text-foreground hover:text-foreground"
                 >
                   <Menu className="h-6 w-6" />
                 </Button>
