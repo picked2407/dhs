@@ -36,12 +36,12 @@ const ValuePropositions = () => {
               </div>
               
               {/* Title */}
-              <h3 className="font-display font-bold text-2xl lg:text-3xl text-foreground mb-6 leading-tight">
+              <h3 className="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-foreground mb-6 leading-tight px-4">
                 {prop.title}
               </h3>
               
               {/* Description */}
-              <p className="font-body text-lg text-muted-foreground leading-relaxed max-w-sm mx-auto">
+              <p className="font-body text-base sm:text-lg text-muted-foreground leading-relaxed max-w-sm mx-auto px-4">
                 {prop.description}
               </p>
             </div>

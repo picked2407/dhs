@@ -109,8 +109,8 @@ const HowItWorksSection = () => {
             >
               <span className="text-6xl font-display font-black text-primary/20 group-hover:text-primary/40 transition-colors duration-300">01</span>
             </motion.div>
-            <motion.h3 variants={itemVariants} className="text-2xl font-display font-black text-foreground mb-4 uppercase tracking-wider">
-              APPLY OR MESSAGE US NOW
+            <motion.h3 variants={itemVariants} className="text-xl sm:text-2xl font-display font-black text-foreground mb-4 uppercase tracking-wider">
+              Apply or Message Us Now
             </motion.h3>
             <motion.p variants={itemVariants} className="text-muted-foreground font-body text-lg leading-relaxed">
               Fill out our form or message us now to secure your space at FansLink
@@ -132,8 +132,8 @@ const HowItWorksSection = () => {
             >
               <span className="text-6xl font-display font-black text-primary/20 group-hover:text-primary/40 transition-colors duration-300">02</span>
             </motion.div>
-            <motion.h3 variants={itemVariants} className="text-2xl font-display font-black text-foreground mb-4 uppercase tracking-wider">
-              LAUNCH YOUR BESPOKE STRATEGY
+            <motion.h3 variants={itemVariants} className="text-xl sm:text-2xl font-display font-black text-foreground mb-4 uppercase tracking-wider">
+              Launch Your Bespoke Strategy
             </motion.h3>
             <motion.p variants={itemVariants} className="text-muted-foreground font-body text-lg leading-relaxed">
               We build your personal brand and custom growth plan — handling fans, marketing, content, and growth so you stay focused and stress-free.
@@ -155,8 +155,8 @@ const HowItWorksSection = () => {
             >
               <span className="text-6xl font-display font-black text-primary/20 group-hover:text-primary/40 transition-colors duration-300">03</span>
             </motion.div>
-            <motion.h3 variants={itemVariants} className="text-2xl font-display font-black text-foreground mb-4 uppercase tracking-wider">
-              PERFORMANCE ANALYSIS AND GROWTH
+            <motion.h3 variants={itemVariants} className="text-xl sm:text-2xl font-display font-black text-foreground mb-4 uppercase tracking-wider">
+              Performance Analysis and Growth
             </motion.h3>
             <motion.p variants={itemVariants} className="text-muted-foreground font-body text-lg leading-relaxed">
               We track, test, and optimise weekly so your income grows consistently; no guessing, no stress. We know what works and make it easy for you to follow and scale.

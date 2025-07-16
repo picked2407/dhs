@@ -154,13 +154,13 @@ const HeroSection = () => {
           >
             <motion.h1
               variants={slideInLeft}
-              className="text-foreground font-display font-black text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-none tracking-tight"
+              className="text-foreground font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-none tracking-tight"
             >
               MORE MONEY,
             </motion.h1>
             <motion.h1
               variants={slideInLeft}
-              className="text-foreground font-display font-black text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-none tracking-tight"
+              className="text-foreground font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-none tracking-tight"
             >
               MORE STRUCTURE,
             </motion.h1>
@@ -168,7 +168,7 @@ const HeroSection = () => {
               variants={slideInLeft}
               className="relative"
             >
-              <h1 className="bg-gradient-hero bg-clip-text text-transparent font-display font-black text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-none tracking-tight">
+              <h1 className="bg-gradient-hero bg-clip-text text-transparent font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-none tracking-tight">
                 MORE FREEDOM
               </h1>
               <motion.div
@@ -183,7 +183,7 @@ const HeroSection = () => {
           {/* Subheadline */}
           <motion.p
             variants={itemVariants}
-            className="text-muted-foreground font-body text-lg lg:text-xl leading-relaxed mb-10 max-w-lg"
+            className="text-muted-foreground font-body text-base sm:text-lg lg:text-xl leading-relaxed mb-10 max-w-lg px-4 sm:px-0"
           >
             Exclusive talent management for ambitious creators ready to scale their income, reclaim their time, and build a true lifestyle.
             Join the top 1% earning 6–7 figures.

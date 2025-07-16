@@ -139,25 +139,25 @@ const ExclusiveBenefitsSection = () => {
             WHAT ELSE DO WE OFFER?
           </motion.div>
           
-          <motion.h2 variants={itemVariants} className="font-display font-black text-5xl sm:text-6xl lg:text-7xl leading-tight text-white mb-8">
+          <motion.h2 variants={itemVariants} className="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight text-white mb-8 px-4">
             WE ONLY WIN <br />
             <span className="text-primary">WHEN YOU DO</span>
           </motion.h2>
           
-          <motion.p variants={itemVariants} className="text-white/80 font-body text-lg leading-relaxed mb-12 max-w-3xl mx-auto">
+          <motion.p variants={itemVariants} className="text-white/80 font-body text-base sm:text-lg leading-relaxed mb-12 max-w-3xl mx-auto px-4">
             This is not a paid service. We invest in your growth and only get paid when you do. Our 50/50 performance model means:
           </motion.p>
         </motion.div>
 
         {/* Value Propositions */}
-        <motion.div variants={containerVariants} className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        <motion.div variants={containerVariants} className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-20 px-4">
           {benefits.map((benefit, index) => (
             <motion.div 
               key={index}
               variants={scaleVariants}
               whileHover={{ scale: 1.05, y: -10 }}
               transition={{ duration: 0.3 }}
-              className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-luxury p-8 text-center hover:bg-black/50 transition-all duration-300"
+              className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-luxury p-6 sm:p-8 text-center hover:bg-black/50 transition-all duration-300"
             >
               <motion.div 
                 initial={{ scale: 0 }}
@@ -167,15 +167,15 @@ const ExclusiveBenefitsSection = () => {
               >
                 {benefit.icon}
               </motion.div>
-              <h3 className="font-display font-bold text-xl text-white mb-4">{benefit.title}</h3>
-              <p className="text-white/80 font-body leading-relaxed">{benefit.description}</p>
+              <h3 className="font-display font-bold text-lg sm:text-xl text-white mb-4">{benefit.title}</h3>
+              <p className="text-white/80 font-body text-sm sm:text-base leading-relaxed">{benefit.description}</p>
             </motion.div>
           ))}
         </motion.div>
 
         {/* Exclusive Benefits */}
-        <motion.div variants={slideInUp} className="text-center mb-12">
-          <h3 className="font-display font-black text-3xl sm:text-4xl text-white mb-8">
+        <motion.div variants={slideInUp} className="text-center mb-12 px-4">
+          <h3 className="font-display font-black text-2xl sm:text-3xl md:text-4xl text-white mb-8">
             WHAT ELSE DO WE OFFER?
           </h3>
         </motion.div>
@@ -195,7 +195,7 @@ const ExclusiveBenefitsSection = () => {
               whileHover={{ scale: 1.05, y: -5 }}
               className="flex-shrink-0 relative"
             >
-              <div className="w-64 h-64 rounded-luxury overflow-hidden relative group">
+              <div className="w-56 h-56 sm:w-64 sm:h-64 rounded-luxury overflow-hidden relative group">
                 <img 
                   src={service.image} 
                   alt={service.title}
