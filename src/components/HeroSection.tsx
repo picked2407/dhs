@@ -69,7 +69,7 @@ const HeroSection = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
+      className="relative min-h-screen flex items-start justify-center overflow-hidden bg-background pt-20 sm:pt-24 md:pt-32"
     >
       
       {/* Animated background elements */}
