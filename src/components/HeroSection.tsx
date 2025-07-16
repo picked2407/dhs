@@ -114,7 +114,6 @@ const HeroSection = () => {
         />
       </div>
 
-      {/* Desktop hero video */}
       <motion.div
         variants={slideInRight}
         className="absolute right-0 top-0 w-1/2 h-full hidden md:block"
@@ -135,7 +134,7 @@ const HeroSection = () => {
         </div>
       </motion.div>
 
-      {/* Content - Left side for desktop, full width for mobile */}
+      {/* Content - Left side */}
       <motion.div
         variants={containerVariants}
         className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full"
@@ -145,9 +144,9 @@ const HeroSection = () => {
           {/* Badge */}
           <motion.div
             variants={itemVariants}
-            className="inline-flex items-center bg-primary/10 border border-primary/20 rounded-luxury px-4 py-2 sm:px-6 sm:py-3 mb-6 sm:mb-8"
+            className="inline-flex items-center bg-primary/10 border border-primary/20 rounded-luxury px-6 py-3 mb-8"
           >
-            <span className="text-primary font-display font-bold uppercase tracking-wide text-xs sm:text-sm">
+            <span className="text-primary font-display font-bold uppercase tracking-wide text-sm">
               Exclusive Talent Management
             </span>
           </motion.div>
@@ -155,17 +154,17 @@ const HeroSection = () => {
           {/* Main Headline - Stacked design */}
           <motion.div
             variants={containerVariants}
-            className="space-y-2 sm:space-y-4 mb-6 sm:mb-8"
+            className="space-y-4 mb-8"
           >
             <motion.h1
               variants={slideInLeft}
-              className="text-foreground font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-none tracking-tight"
+              className="text-foreground font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-none tracking-tight"
             >
               MORE MONEY
             </motion.h1>
             <motion.h1
               variants={slideInLeft}
-              className="text-foreground font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-none tracking-tight"
+              className="text-foreground font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-none tracking-tight"
             >
               MORE STRUCTURE
             </motion.h1>
@@ -173,14 +172,14 @@ const HeroSection = () => {
               variants={slideInLeft}
               className="relative"
             >
-              <h1 className="bg-gradient-hero bg-clip-text text-transparent font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-none tracking-tight">
+              <h1 className="bg-gradient-hero bg-clip-text text-transparent font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-none tracking-tight">
                 MORE FREEDOM
               </h1>
               <motion.div
                 initial={{ width: 0 }}
-                animate={{ width: "4rem" }}
+                animate={{ width: "6rem" }}
                 transition={{ delay: 1, duration: 0.8 }}
-                className="absolute -bottom-1 left-0 sm:w-24 lg:w-32 h-1.5 sm:h-2 bg-primary rounded-full"
+                className="absolute -bottom-2 left-0 lg:w-32 h-2 bg-primary rounded-full"
               />
             </motion.div>
           </motion.div>
@@ -188,7 +187,7 @@ const HeroSection = () => {
           {/* Subheadline */}
           <motion.p
             variants={itemVariants}
-            className="text-white md:text-muted-foreground font-body text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed mb-8 sm:mb-10 max-w-md lg:max-w-lg"
+            className="text-muted-foreground font-body text-base sm:text-lg lg:text-xl leading-relaxed mb-10 max-w-lg px-4 sm:px-0"
           >
             Exclusive talent management for ambitious creators ready to scale their income, reclaim their time, and build a true lifestyle.
             Join the top 1% earning 6–7 figures.
@@ -197,13 +196,13 @@ const HeroSection = () => {
           {/* CTA Button */}
           <motion.div
             variants={containerVariants}
-            className="flex justify-center sm:justify-start"
+            className="flex justify-center sm:justify-start px-4 sm:px-0"
           >
             <motion.div variants={buttonVariants} whileHover="hover">
               <Button 
                 variant="luxury" 
                 size="lg" 
-                className="text-sm sm:text-base lg:text-lg px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 h-auto font-display shadow-glow hover:shadow-luxury transition-all duration-300 w-full sm:w-auto max-w-sm sm:max-w-none"
+                className="text-sm sm:text-base lg:text-lg px-6 sm:px-8 lg:px-10 py-4 sm:py-5 lg:py-6 h-auto font-display shadow-glow hover:shadow-luxury transition-all duration-300 w-full sm:w-auto max-w-xs sm:max-w-none"
                 asChild
               >
                 <a href="https://wa.me/447564839663" target="_blank" rel="noopener noreferrer">
@@ -217,24 +216,21 @@ const HeroSection = () => {
         </div>
       </motion.div>
       
-      {/* Mobile hero video with dark overlay */}
+      {/* Mobile hero video */}
       <motion.div
         variants={slideInRight}
-        className="md:hidden absolute inset-0 z-0"
+        className="md:hidden absolute bottom-0 left-0 right-0 h-2/5 opacity-60"
       >
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="w-full h-full object-cover"
         >
           <source src="/woman.mp4" type="video/mp4" />
         </video>
-        {/* Dark overlay for better text visibility */}
-        <div className="absolute inset-0 bg-black/40" />
-        {/* Gradient overlay to merge with background */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/30 to-background/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-background/20 to-transparent" />
       </motion.div>
       
     </motion.section>
