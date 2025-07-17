@@ -205,7 +205,7 @@ const HeroSection = () => {
                 className="text-sm sm:text-base lg:text-lg px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 xl:py-6 h-auto font-display shadow-glow hover:shadow-luxury transition-all duration-300 w-full sm:w-auto max-w-full sm:max-w-none"
                 asChild
               >
-                <a href="https://wa.me/447564839663" target="_blank" rel="noopener noreferrer">
+                <a href="/apply">
                   <span className="hidden sm:inline">Send Us A Message</span>
                   <span className="sm:hidden">APPLY NOW</span>
                   <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />

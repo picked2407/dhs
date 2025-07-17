@@ -175,8 +175,9 @@ const LifestyleSection = () => {
                 variant="luxury" 
                 size="lg" 
                 className="text-sm sm:text-base lg:text-lg px-6 sm:px-8 lg:px-12 py-3 sm:py-4 lg:py-6 h-auto font-display font-bold uppercase tracking-wider shadow-glow hover:shadow-luxury transition-all duration-300 w-full sm:w-auto max-w-xs sm:max-w-none lg:max-w-fit"
+                asChild
               >
-                JOIN TOP 0.1%
+                <a href="/apply">JOIN TOP 0.1%</a>
               </Button>
             </motion.div>
           </motion.div>
