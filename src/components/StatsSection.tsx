@@ -28,7 +28,7 @@ const StatsSection = () => {
         once: true
       }} className="text-center">
           {/* Title */}
-          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black font-display text-foreground mb-12 sm:mb-16 leading-tight uppercase">
+          <h2 className="text-5xl font-black font-display text-foreground mb-12 sm:mb-16 leading-tight uppercase">
             CREATOR RESULTS IN THE <span className="text-primary">LAST 12 MONTHS</span>
           </h2>
           
