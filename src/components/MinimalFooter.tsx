@@ -8,7 +8,7 @@ const MinimalFooter = () => {
           {/* Logo and Description */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <img src="/lovable-uploads/fec34ed6-7e36-4a66-8c41-36f04922ab04.png" alt="Fanslink Logo" className="w-10 h-10" />
+              <img src="/lovable-uploads/d9139574-5537-4841-b473-94ae79ad7d8e.png" alt="Fanslink Logo" className="w-10 h-10" />
               
             </div>
             <p className="font-body text-white/80 text-sm leading-relaxed">
