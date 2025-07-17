@@ -28,7 +28,7 @@ const StatsSection = () => {
         once: true
       }} className="text-center">
           {/* Title */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-foreground mb-8 sm:mb-12">
+          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black font-display text-foreground mb-12 sm:mb-16 leading-tight">
             Creator results in the last 12 months
           </h2>
           
