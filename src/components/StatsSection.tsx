@@ -51,7 +51,7 @@ const StatsSection = () => {
                     {stat.label}
                   </div>
                   <div className="flex items-center justify-center gap-3 text-white">
-                    
+                    <stat.icon className="w-6 h-6 sm:w-8 sm:h-8" />
                     <span className="text-2xl sm:text-3xl lg:text-4xl font-bold font-display">
                       {stat.value}
                     </span>
