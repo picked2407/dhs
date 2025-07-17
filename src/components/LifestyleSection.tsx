@@ -134,7 +134,7 @@ const LifestyleSection = () => {
           </motion.div>
 
           {/* Right - Content */}
-          <motion.div variants={containerVariants} className="space-y-6 sm:space-y-8 order-1 lg:order-2 text-center lg:text-left">
+          <motion.div variants={containerVariants} className="space-y-6 sm:space-y-8 order-1 lg:order-2 text-left lg:text-left">
             {/* Header */}
             <motion.div variants={itemVariants} className="space-y-4 sm:space-y-6">
               <div className="uppercase tracking-[0.3em] text-primary font-display font-bold text-sm">
@@ -169,7 +169,7 @@ const LifestyleSection = () => {
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="pt-4 flex justify-center lg:justify-start"
+              className="pt-4 flex justify-start lg:justify-start"
             >
               <Button 
                 variant="luxury" 
