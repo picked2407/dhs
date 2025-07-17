@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Eye, CalendarDays } from "lucide-react";
+import { Eye, CalendarDays, ArrowUp } from "lucide-react";
 const StatsSection = () => {
   const stats = [{
     label: "Generated Income",
@@ -55,6 +55,7 @@ const StatsSection = () => {
                     <span className="text-2xl sm:text-3xl lg:text-4xl font-bold font-display">
                       {stat.value}
                     </span>
+                    <ArrowUp className="w-6 h-6 sm:w-7 sm:h-7 text-green-400" />
                   </div>
                 </motion.div>)}
             </div>
