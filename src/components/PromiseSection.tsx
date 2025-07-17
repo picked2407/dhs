@@ -117,7 +117,7 @@ const PromiseSection = () => {
           }} 
           className="px-4"
         >
-          <Button className="bg-white text-black hover:text-primary font-display font-bold text-sm sm:text-base px-8 sm:px-12 lg:px-16 py-4 sm:py-6 h-auto uppercase tracking-wider shadow-2xl transition-all duration-300 border-2 border-white w-full sm:w-auto max-w-xs sm:max-w-none mx-auto" asChild>
+          <Button className="bg-primary text-white hover:bg-primary/90 font-display font-bold text-sm sm:text-base px-8 sm:px-12 lg:px-16 py-4 sm:py-6 h-auto uppercase tracking-wider shadow-2xl transition-all duration-300 border-2 border-primary w-full sm:w-auto max-w-xs sm:max-w-none mx-auto" asChild>
             <a href="/apply">APPLY NOW</a>
           </Button>
         </motion.div>
