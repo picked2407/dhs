@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { PenTool, CalendarDays, DollarSign } from "lucide-react";
+import { Eye, CalendarDays, DollarSign } from "lucide-react";
 
 const StatsSection = () => {
   const stats = [
@@ -16,7 +16,7 @@ const StatsSection = () => {
     {
       label: "Reach",
       value: "23,723",
-      icon: PenTool,
+      icon: Eye,
     },
   ];
 
