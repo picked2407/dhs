@@ -33,31 +33,31 @@ const StatsSection = () => {
           </h2>
           
           {/* Stats Section */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {stats.map((stat, index) => <motion.div key={index} initial={{
-            opacity: 0,
-            scale: 0.95
-          }} whileInView={{
-            opacity: 1,
-            scale: 1
-          }} transition={{
-            duration: 0.5,
-            delay: index * 0.1
-          }} viewport={{
-            once: true
-          }} className="bg-white rounded-2xl p-8 shadow-xl">
-                <div className="text-lg sm:text-xl font-bold text-primary mb-6 uppercase tracking-wider">
-                  {stat.label}
-                </div>
-                <div className="flex items-center justify-center gap-4">
-                  {index !== 0 && <stat.icon className="w-6 h-6 text-primary" />}
-                  <div className="bg-primary/10 rounded-xl px-4 py-2">
-                    <span className="text-2xl sm:text-3xl lg:text-4xl font-bold font-display text-primary">
+          <div className="bg-primary rounded-xl overflow-hidden shadow-lg">
+            <div className="grid grid-cols-1 md:grid-cols-3">
+              {stats.map((stat, index) => <motion.div key={index} initial={{
+              opacity: 0,
+              scale: 0.95
+            }} whileInView={{
+              opacity: 1,
+              scale: 1
+            }} transition={{
+              duration: 0.5,
+              delay: index * 0.1
+            }} viewport={{
+              once: true
+            }} className={`text-center p-8 sm:p-8 ${index < stats.length - 1 ? 'border-b md:border-b-0 md:border-r border-white/20' : ''}`}>
+                  <div className="text-sm sm:text-base font-bold text-white/90 mb-4 uppercase tracking-wider">
+                    {stat.label}
+                  </div>
+                  <div className="flex items-center justify-center gap-4 text-white">
+                    {index !== 0 && <stat.icon className="w-8 h-8 sm:w-10 sm:h-10" />}
+                    <span className="text-2xl sm:text-3xl lg:text-4xl font-bold font-display">
                       {stat.value}
                     </span>
                   </div>
-                </div>
-              </motion.div>)}
+                </motion.div>)}
+            </div>
           </div>
         </motion.div>
       </div>
