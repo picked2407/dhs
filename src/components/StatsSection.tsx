@@ -1,27 +1,32 @@
 import { motion } from "framer-motion";
+import { PenTool, Eye, DollarSign } from "lucide-react";
 
 const StatsSection = () => {
   const stats = [
     {
       label: "Generated Income",
-      value: "$2.4M",
+      value: "$13.66M",
+      icon: DollarSign,
     },
     {
       label: "Total amount of Subs",
-      value: "850K",
+      value: "146.2M",
+      icon: Eye,
     },
     {
       label: "Reach",
-      value: "45.2M",
+      value: "23,723",
+      icon: PenTool,
     },
   ];
 
   const logos = [
-    "Logo 1",
-    "Logo 2", 
-    "Logo 3",
-    "Logo 4",
-    "Logo 5",
+    "pliability",
+    "CRAYO", 
+    "Musicfy",
+    "Cal AI",
+    "feather",
+    "zabihan",
   ];
 
   return (
@@ -36,11 +41,11 @@ const StatsSection = () => {
         >
           {/* Logo Section */}
           <div className="mb-8 sm:mb-12">
-            <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 lg:gap-12">
+            <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 lg:gap-8">
               {logos.map((logo, index) => (
                 <div
                   key={index}
-                  className="bg-muted rounded-lg px-6 py-3 text-muted-foreground font-medium text-sm"
+                  className="text-muted-foreground font-medium text-sm sm:text-base px-3 py-2"
                 >
                   {logo}
                 </div>
@@ -49,8 +54,8 @@ const StatsSection = () => {
           </div>
 
           {/* Stats Section */}
-          <div className="bg-primary rounded-xl p-6 sm:p-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          <div className="bg-black rounded-xl overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-3">
               {stats.map((stat, index) => (
                 <motion.div
                   key={index}
@@ -58,13 +63,18 @@ const StatsSection = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="text-center"
+                  className={`text-center p-6 sm:p-8 ${
+                    index < stats.length - 1 ? 'border-r border-white/20' : ''
+                  }`}
                 >
-                  <div className="text-xs sm:text-sm font-medium text-primary-foreground/80 mb-2 uppercase tracking-wider">
+                  <div className="text-xs sm:text-sm font-medium text-white/80 mb-3 uppercase tracking-wider">
                     {stat.label}
                   </div>
-                  <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-foreground">
-                    {stat.value}
+                  <div className="flex items-center justify-center gap-3 text-white">
+                    <stat.icon className="h-5 w-5 sm:h-6 sm:w-6" />
+                    <span className="text-2xl sm:text-3xl lg:text-4xl font-bold font-display">
+                      {stat.value}
+                    </span>
                   </div>
                 </motion.div>
               ))}
