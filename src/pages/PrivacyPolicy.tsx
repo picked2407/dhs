@@ -153,8 +153,7 @@ const PrivacyPolicy = () => {
                   If you have any questions about this Privacy Policy, your data, or wish to exercise your rights, please contact us:
                 </p>
                 <ul className="list-disc pl-6 space-y-1">
-                  <li>By email: paul@fanslink.management</li>
-                  <li>By visiting this page on our website: <a href="https://fanslink.management/contact" className="text-primary hover:underline">https://fanslink.management/contact</a></li>
+                  <li>Contact us via WhatsApp: <a href="https://wa.me/447564839663" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">https://wa.me/447564839663</a></li>
                 </ul>
               </section>
             </div>
