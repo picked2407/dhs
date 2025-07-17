@@ -196,7 +196,7 @@ const HowItWorksSection = () => {
               className="text-primary font-display font-bold uppercase tracking-wider text-base sm:text-lg p-0 h-auto hover:bg-transparent"
               asChild
             >
-              <a href="/contact" className="inline-flex items-center">
+              <a href="/apply" className="inline-flex items-center">
                 APPLY NOW
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>

@@ -88,9 +88,11 @@ const Footer = () => {
             <Button variant="luxury" size="lg" className="text-sm sm:text-base px-6 sm:px-8 lg:px-12 py-4 h-auto font-display uppercase tracking-wide w-full sm:w-auto max-w-xs sm:max-w-none" asChild>
               <a href="/apply">Apply Now →</a>
             </Button>
-            <Button variant="outline" size="lg" className="bg-white/10 text-white border-white/30 hover:bg-white/20 text-sm sm:text-base px-6 sm:px-8 lg:px-12 py-4 h-auto font-display uppercase tracking-wide backdrop-blur-sm w-full sm:w-auto max-w-xs sm:max-w-none">
-              <span className="hidden sm:inline">Book Discovery Call</span>
-              <span className="sm:hidden">Book Call</span>
+            <Button variant="outline" size="lg" className="bg-white/10 text-white border-white/30 hover:bg-white/20 text-sm sm:text-base px-6 sm:px-8 lg:px-12 py-4 h-auto font-display uppercase tracking-wide backdrop-blur-sm w-full sm:w-auto max-w-xs sm:max-w-none" asChild>
+              <a href="https://wa.me/447564839663" target="_blank" rel="noopener noreferrer">
+                <span className="hidden sm:inline">Book Discovery Call</span>
+                <span className="sm:hidden">Book Call</span>
+              </a>
             </Button>
           </div>
 
