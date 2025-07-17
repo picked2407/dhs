@@ -20,14 +20,6 @@ const StatsSection = () => {
     },
   ];
 
-  const logos = [
-    "pliability",
-    "CRAYO", 
-    "Musicfy",
-    "Cal AI",
-    "feather",
-    "zabihan",
-  ];
 
   return (
     <section className="py-16 sm:py-20 lg:py-24 bg-background">
@@ -39,22 +31,8 @@ const StatsSection = () => {
           viewport={{ once: true }}
           className="bg-white border border-border rounded-2xl p-8 sm:p-12"
         >
-          {/* Logo Section */}
-          <div className="mb-8 sm:mb-12">
-            <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 lg:gap-8">
-              {logos.map((logo, index) => (
-                <div
-                  key={index}
-                  className="text-muted-foreground font-medium text-sm sm:text-base px-3 py-2"
-                >
-                  {logo}
-                </div>
-              ))}
-            </div>
-          </div>
-
           {/* Stats Section */}
-          <div className="bg-black rounded-xl overflow-hidden">
+          <div className="bg-primary rounded-xl overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-3">
               {stats.map((stat, index) => (
                 <motion.div
