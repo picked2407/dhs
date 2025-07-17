@@ -28,8 +28,8 @@ const StatsSection = () => {
         once: true
       }} className="text-center">
           {/* Title */}
-          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black font-display text-foreground mb-12 sm:mb-16 leading-tight">
-            Creator results in the last 12 months
+          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black font-display text-foreground mb-12 sm:mb-16 leading-tight uppercase">
+            CREATOR RESULTS IN THE <span className="text-primary">LAST 12 MONTHS</span>
           </h2>
           
           {/* Stats Section */}
@@ -52,7 +52,7 @@ const StatsSection = () => {
                   </div>
                   <div className="flex items-center justify-center gap-4 text-white">
                     {index !== 0 && <stat.icon className="w-8 h-8 sm:w-10 sm:h-10" />}
-                    <span className="text-4xl sm:text-5xl lg:text-6xl font-bold font-display">
+                    <span className="text-2xl sm:text-3xl lg:text-4xl font-bold font-display">
                       {stat.value}
                     </span>
                   </div>
