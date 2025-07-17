@@ -1,19 +1,15 @@
 import { Button } from "@/components/ui/button";
-
 const MinimalFooter = () => {
-  return (
-    <footer className="py-12" style={{ backgroundColor: '#171717' }}>
+  return <footer className="py-12" style={{
+    backgroundColor: '#171717'
+  }}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
           {/* Logo and Description */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <img 
-                src="/lovable-uploads/fec34ed6-7e36-4a66-8c41-36f04922ab04.png" 
-                alt="Fanslink Logo" 
-                className="w-10 h-10"
-              />
-              <h3 className="font-display text-xl font-bold text-white">fanslink</h3>
+              <img src="/lovable-uploads/fec34ed6-7e36-4a66-8c41-36f04922ab04.png" alt="Fanslink Logo" className="w-10 h-10" />
+              
             </div>
             <p className="font-body text-white/80 text-sm leading-relaxed">
               Empowering content creators to reach their full potential through premium partnerships and a structure no one else has.
@@ -38,12 +34,7 @@ const MinimalFooter = () => {
               <p className="font-body text-white/80 text-sm leading-relaxed">
                 Take the first step towards financial freedom and luxury lifestyle.
               </p>
-              <Button 
-                variant="luxury" 
-                size="sm" 
-                className="w-full font-display uppercase tracking-wide"
-                asChild
-              >
+              <Button variant="luxury" size="sm" className="w-full font-display uppercase tracking-wide" asChild>
                 <a href="/apply">Apply Now →</a>
               </Button>
             </div>
@@ -64,8 +55,6 @@ const MinimalFooter = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default MinimalFooter;
