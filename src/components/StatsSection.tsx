@@ -55,7 +55,7 @@ const StatsSection = () => {
                     <span className="text-2xl sm:text-3xl lg:text-4xl font-bold font-display">
                       {stat.value}
                     </span>
-                    <ArrowUp className="w-6 h-6 sm:w-7 sm:h-7 text-green-400" />
+                    <ArrowUp className="w-6 h-6 sm:w-7 sm:h-7 text-green-400" strokeWidth={3} />
                   </div>
                 </motion.div>)}
             </div>
