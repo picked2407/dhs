@@ -46,13 +46,13 @@ const StatsSection = () => {
               delay: index * 0.1
             }} viewport={{
               once: true
-            }} className={`text-center p-6 sm:p-8 ${index < stats.length - 1 ? 'border-r border-white/20' : ''}`}>
-                  <div className="text-xs sm:text-sm font-medium text-white/80 mb-3 uppercase tracking-wider">
+            }} className={`text-center p-8 sm:p-8 ${index < stats.length - 1 ? 'border-b md:border-b-0 md:border-r border-white/20' : ''}`}>
+                  <div className="text-sm sm:text-base font-bold text-white/90 mb-4 uppercase tracking-wider">
                     {stat.label}
                   </div>
-                  <div className="flex items-center justify-center gap-3 text-white">
-                    {index !== 0 && <stat.icon className="w-6 h-6 sm:w-8 sm:h-8" />}
-                    <span className="text-2xl sm:text-3xl lg:text-4xl font-bold font-display">
+                  <div className="flex items-center justify-center gap-4 text-white">
+                    {index !== 0 && <stat.icon className="w-8 h-8 sm:w-10 sm:h-10" />}
+                    <span className="text-4xl sm:text-5xl lg:text-6xl font-bold font-display">
                       {stat.value}
                     </span>
                   </div>
