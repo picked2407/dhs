@@ -29,10 +29,15 @@ const StatsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-white border border-border rounded-2xl p-8 sm:p-12"
+          className="text-center"
         >
+          {/* Title */}
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-foreground mb-8 sm:mb-12">
+            Creator results in the last 12 months
+          </h2>
+          
           {/* Stats Section */}
-          <div className="bg-primary rounded-xl overflow-hidden">
+          <div className="bg-primary rounded-xl overflow-hidden shadow-lg">
             <div className="grid grid-cols-1 md:grid-cols-3">
               {stats.map((stat, index) => (
                 <motion.div
