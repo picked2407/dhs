@@ -141,10 +141,9 @@ const Footer = () => {
             <div>
               <h4 className="font-display font-bold text-lg mb-4">Quick Links</h4>
               <ul className="space-y-2 font-body">
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">About Us</a></li>
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">Services</a></li>
-                <li><a href="/apply" className="text-background/80 hover:text-background transition-colors">Apply Now</a></li>
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">Contact</a></li>
+                <li><a href="/#founders" className="text-background/80 hover:text-background transition-colors">About Us</a></li>
+                <li><a href="/#features" className="text-background/80 hover:text-background transition-colors">Services</a></li>
+                <li><a href="https://wa.me/447564839663" target="_blank" rel="noopener noreferrer" className="text-background/80 hover:text-background transition-colors">Contact</a></li>
               </ul>
             </div>
 
