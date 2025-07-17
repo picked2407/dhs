@@ -168,7 +168,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="border-t border-background/20 pt-8 text-center">
-            <p className="text-background/60 font-body">© 2025 FansLink. All rights reserved. | <a href="/privacy-policy" className="hover:text-background/80 transition-colors">Privacy Policy</a> | Terms of Service</p>
+            <p className="text-background/60 font-body">© 2025 FansLink. All rights reserved. | <a href="/privacy-policy" className="hover:text-background/80 transition-colors">Privacy Policy</a></p>
           </div>
         </div>
       </div>
