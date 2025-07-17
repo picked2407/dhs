@@ -33,7 +33,7 @@ const StatsSection = () => {
           </h2>
           
           {/* Stats Section */}
-          <div className="bg-primary rounded-xl overflow-hidden shadow-lg">
+          <div className="bg-gradient-to-r from-primary/90 to-primary/70 rounded-xl overflow-hidden shadow-lg">
             <div className="grid grid-cols-1 md:grid-cols-3">
               {stats.map((stat, index) => <motion.div key={index} initial={{
               opacity: 0,
