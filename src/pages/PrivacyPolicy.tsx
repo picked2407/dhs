@@ -1,5 +1,7 @@
 import Navigation from "@/components/Navigation";
-import MinimalFooter from "@/components/MinimalFooter";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const PrivacyPolicy = () => {
   return (
@@ -8,6 +10,12 @@ const PrivacyPolicy = () => {
       
       <main className="pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Link to="/" className="inline-flex items-center mb-8">
+            <Button variant="outline" className="gap-2">
+              <ArrowLeft className="h-4 w-4" />
+              Back to Home
+            </Button>
+          </Link>
           <div className="prose prose-lg max-w-none">
             <h1 className="font-display font-black text-4xl sm:text-5xl text-foreground mb-4">
               Privacy Policy
@@ -153,8 +161,6 @@ const PrivacyPolicy = () => {
           </div>
         </div>
       </main>
-
-      <MinimalFooter />
     </div>
   );
 };
