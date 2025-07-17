@@ -1,21 +1,21 @@
 import { motion } from "framer-motion";
-import { Eye, CalendarDays, DollarSign } from "lucide-react";
+import { Eye, CalendarDays } from "lucide-react";
 
 const StatsSection = () => {
   const stats = [
     {
       label: "Generated Income",
-      value: "$13.66M",
-      icon: DollarSign,
+      value: "$3.562M",
+      icon: CalendarDays,
     },
     {
       label: "Total amount of Subs",
-      value: "146.2M",
+      value: "116,243",
       icon: CalendarDays,
     },
     {
       label: "Reach",
-      value: "23,723",
+      value: "11,372,526",
       icon: Eye,
     },
   ];
