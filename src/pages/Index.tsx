@@ -10,6 +10,7 @@ import FeaturesSection from "@/components/FeaturesSection";
 import ExclusiveBenefitsSection from "@/components/ExclusiveBenefitsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import FoundersSection from "@/components/FoundersSection";
+import StatsSection from "@/components/StatsSection";
 import Footer from "@/components/Footer";
 import { WhatsAppContactDialog } from "@/components/WhatsAppContactDialog";
 
@@ -32,6 +33,7 @@ const Index = () => {
       <HeroSection />
       <ValuePropositions />
       <LifestyleSection />
+      <StatsSection />
       <WhyFansLinkSection />
       <PromiseSection />
       <FeaturesSection />
